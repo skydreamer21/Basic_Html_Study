@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DIV 그룹화</title>
+    </head>
+    <body> <!-- 네이버 큰틀 짜보기 -->
+        <!-- 네이버의 맹점 : div로 짜놨다는거 -> 그래서 role을 붙여놓음 -->
+        <div>
+            <h1>Logo</h1>
+            <p>네이버 상단</p>
+        </div>
+        <div>
+            <div role="main">
+                <h2>뉴스 섹션</h2>
+                <p>뉴스 내용들....</p>
+            </div>
+            <div>
+                <h2>로그인 영역</h2>
+                <p>사이드 영역들...</p>
+            </div>
+        </div>
+        <div>
+            <h3>푸터</h3>
+            <p>저작권, 연락처, 상호...</p>
+        </div>
+    </body> <!-- 큰그림을 먼저 작성하고 세부사항을 만들어야 함, 그렇지 않으면 레이아웃이 엉키는 경우가 생김 -->
+    <!-- 맨처음에 디자인과 기획한 내용을 보고 div 섹셔닝이 힘듬 -->
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HTML5 그룹화</title>
+    </head>
+    <body> 
+        <!-- <header role="navigation"> 태그에서 이미 역할이 있기 때문에 role을 쓰면 안됨 -->
+        <header> 
+            <h1>Logo</h1>
+            <nav>네이버 상단</nav> <!-- nav : navigation 이 사이트의 주 navigation -->
+        </header>
+        <main>
+            <section role="main">
+                <h2>뉴스 섹션</h2>
+                <p>뉴스 내용들....</p>
+            </section>
+            <aside> <!-- section보다는 부가적인 정보를 뜻할 때 -->
+                <h2>로그인 영역</h2>
+                <p>사이드 영역들...</p>
+            </aside>
+        </main>
+        <footer>
+            <h3>푸터</h3>
+            <address>저작권, 연락처, 상호...</address>
+        </footer>
+    </body> 
+</html>

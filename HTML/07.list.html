@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>리스트</title>
+    </head>
+    <body>
+        <h1>리스트</h1>
+        <h2>비순차 목록 Unordered List</h2>
+        <ul>
+            <li>list item</li>
+            <li>list item</li>
+            <li>list item</li>
+            <li>list item</li>
+        </ul>
+        <h2>순차 목록 Ordered List</h2>
+        <ol>
+            <li>list item</li>
+            <li>list item</li>
+            <li>list item</li>
+            <li>list item</li>
+        </ol>
+        <h2>정의 목록 Definition List</h2>
+        <dl>
+            <dt>Definition term - 용어정의, 제목성격</dt>
+            <dd>Definition description - 용어설명</dd>
+            <dd>Definition description - 용어설명</dd>
+            <dd>Definition description - 용어설명</dd>
+        </dl>
+        <hr>
+        <h2>주의점</h2>
+        <ul>
+            <li>list item</li>
+        </ul>
+        <ul>
+            <li>list item</li>
+        </ul>
+        <ul>
+            <li>list item</li>
+        </ul> <!-- 바람직하지 않음 하나만 있으면 list가 아님 -->
+
+        <h3>title</h3> <!-- 정상! -->
+        <ul>
+<!--             <h3>title</h3> list 자식요소로 li 말고 다른거 어떤것도 올 수 없음 (오려면 li 안에 와야됨) -->
+            <li>list item</li>            
+            <li>list item</li>            
+            <li>list item</li>            
+        </ul>
+
+        <dl><!-- 바람직 -->
+            <dt>Definition term - 용어정의, 제목성격</dt>
+            <dd>Definition description - 용어설명</dd>
+            <dt>Definition term - 용어정의, 제목성격</dt>
+            <dd>Definition description - 용어설명</dd>
+            <dt>Definition term - 용어정의, 제목성격</dt>
+            <dd>Definition description - 용어설명</dd>
+        </dl>
+
+        <dl><!-- 바람직하지 않다 ; 용어 2개인데 설명은 하나 -->
+            <dt>Definition term - 용어정의, 제목성격</dt>
+            <dt>Definition term - 용어정의, 제목성격</dt>
+            <dd>Definition description - 용어설명</dd>
+        </dl>
+
+        <hr>
+        <ol start="5" type="I"> <!-- ol 쓰임새 : 법조항, 약관... (넘버링 노가다) -->
+            <li>list item</li>
+            <li>list item</li>
+            <li>list item</li>
+            <li>list item</li>
+        </ol>
+        <hr>   
+        <h2>메뉴</h2>
+        <ul>
+            <li>About us <!-- 모양 : disc (css로 바꾸는 것 가능) -->
+                <ul><!-- 서브메뉴 만들기 -->
+                    <li>vision</li> <!-- 모양 : circle -->
+                    <li>history</li>
+                    <li>location
+                        <ul> <!-- 3단계까지는 잘 안씀 -->
+                            <li>Seoul</li>
+                            <li>Jeju</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>works</li>
+            <li>services</li>
+            <li>Contact us</li>
+        </ul>
+    </body>
+</html>

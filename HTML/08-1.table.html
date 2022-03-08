@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>표 - table</title>
+        <style> /*이 페이지 안에서만 임시로 css 사용할때 */
+            /* css 문법을 쓰는 영역 (주석도 달라짐) */
+            .col1 {
+                width:40px
+            }
+            .col2 {
+                width:400px
+            }
+            .col3 {
+                width:50px
+            }
+        </style>
+    </head>
+    <body> 
+        <h1>테이블</h1> <!-- 테이블은 특정 형식이외에는 잘 안쓰임 -->
+        <p>
+            일정표, 달력, 게시판, 이력서양식
+        </p>
+        <figure> <!-- table에 대한 설명 넣기 (이전에는 summary를 썼지만 지금은 잘 안쓰임) -->
+            <figcaption>
+                <h2>일정표</h2>
+                <p>1/4분기 일정표</p>
+            </figcaption>
+            <table border="1"> <!-- border 은 지금 안씀 비표준 -->
+                <!-- 각 표에 구성에 맞게 태그를 바꿔주면 css별도로 안해도 굵게와 가운데 정렬이 됨 -->
+                <colgroup>
+                    <col class="col1"/> 
+                    <col class="col2"/> 
+                    <col class="col3"/> 
+                    <col class="col3"/> <!-- 클래스명(태그에 이름을 붙여서)으로 너비를 지정하는게 나중에 바꾸거나 할 때 좋음-->
+                    <!-- 위와 같이 되어있는게 html 정석 (html만) -->
+                </colgroup> <!-- 현재쓰는 방식 -->
+                <thead>
+                    <tr>
+                        <th>구분</th> <!-- table data, 한 칸, 한셀 -->
+                        <th scope="col">제목1</th> <!-- 세로를 대표하는 제목이다 라는 의미 -->
+                        <th scope="col">제목2</th>
+                        <th scope="col">제목3</th> 
+                        <!-- <th scope="col" width="50">제목3</th> 첫줄의 너비를 지정하면 나머지들이 다 바뀜 (하지만 비표준, 옛날방식, 지금은 안쓰임) -->
+                    </tr> <!-- table row -->
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th> 
+                        <td>data11 data data</td> <!-- 자동으로 너비가 늘어남 -->
+                        <td>data12</td>
+                        <td>data13</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th> 
+                        <td>data21</td>
+                        <td>data22</td>
+                        <td>data23</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th> 
+                        <td>data31</td>
+                        <td>data32</td>
+                        <td>data33</td>
+                    </tr> 
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>합계</th> 
+                        <td>total1</td>
+                        <td>total2</td>
+                        <td>total3</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </figure>
+        <hr>
+        <table border="1"> <!-- border 은 지금 안씀 비표준 -->
+            <thead>
+                <tr>
+                    <th>구분</th> <!-- table data, 한 칸, 한셀 -->
+                    <th scope="col">제목1</th> <!-- 세로를 대표하는 제목이다 라는 의미 -->
+                    <th scope="col">제목2</th>
+                    <th scope="col">제목3</th> 
+                    <!-- <th scope="col" width="50">제목3</th> 첫줄의 너비를 지정하면 나머지들이 다 바뀜 (하지만 비표준, 옛날방식, 지금은 안쓰임) -->
+                </tr> <!-- table row -->
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th> 
+                    <td>data11 data data</td> <!-- 자동으로 너비가 늘어남 -->
+                    <td colspan="2">data12</td> <!-- 셀 병합 -->
+                    <!-- <td>data13</td> --> <!-- 합친 셀은 삭제해주어야 함 -->
+                </tr>
+                <tr>
+                    <th scope="row">2</th> 
+                    <td rowspan="2">data21</td>
+                    <td>data22</td>
+                    <td>data23</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th> 
+                    <!-- <td>data31</td> -->
+                    <td>data32</td>
+                    <td>data33</td>
+                </tr> 
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>합계</th> 
+                    <td colspan="3"> 셀병합은 colspan, rowspan</td>
+                    <!-- <td>total2</td> -->
+                    <!-- <td>total3</td> -->
+                </tr>
+            </tfoot>
+        </table>
+        <hr>
+        <a href="../Index.html">back</a>
+    </body>
+</html>

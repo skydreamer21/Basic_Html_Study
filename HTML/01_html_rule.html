@@ -1,0 +1,38 @@
+<!DOCTYPE html>  <!--dtd 지정-->
+<html lang="ko"> <!-- 주 언어 -->
+    <head> 
+        <!-- <title>삼성전자 - 갤럭시 12</title> -->
+        <title> 갤럭시 12 - 삼성전자 </title> <!-- html convention -->
+        <meta charset="utf-8" /> <!-- utf : Unicode Transfer Formula 8번째 -->
+        <meta name="keywords" content="카메라, 고해상도, 멀탯, 스마트" /> <!-- keyword -->
+        <meta name="description" content="멀티태스킹 가능 고해상도 카메라 스마트폰" /> <!-- 말로 설명 (검색엔진이 얘를 더 중요시 봄) -->   
+        <meta name="veiwport" content="width=device-width, inital-scale=1"/> 
+        <link rel="stylesheet" href="main.css">
+        
+    </head>
+    <body>
+        <h1 lang ="zh">你好</h1> <!-- lang -> 스크린 리더 (웹접근성) -->
+        <h2> html 첫문서</h2>
+        <h2> 공백              공백 </h2>
+        <pre>
+공백                 유지
+            엔터도
+
+
+            유지
+        </pre>
+        <!-- ⓒ 나오긴 하지만 웹 표준이 아님 -> Entity Code로 넣어야 함 -->
+        ⓒ &copy; &#169;
+        <h3>제목 & 내용 (entity 사용X)</h3>
+        <h3>제목 &amp; 내용 &#40;entity 사용O&#41;</h3>
+        <!-- <h3><bigtitle></h3> 태그로 인식해서 표시를 안함 -->
+        <h3>&lt;bigtitle&gt;</h3> <!-- < less than, > greater than -->
+        <hr> <!-- hrizontal rule 내용의 구분선 by the way... -->
+        <p>
+            웹 표준은 html, css, javascript가 분리되어야 한다.
+        </p>
+        <h4 style="color: red">제목</h4> <!-- 인라인 스타일은 웹표준을 어기는 것 -> 하면 안됨 -->
+        <button onclick="window.open('new.html')">팝업 확인하기</button> <!-- javascript 분리 필요 -> 마찬가지로 하면 안됨 -->
+        <script scr="main.js"></script>
+    </body>
+    </html>
