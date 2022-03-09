@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form</title>
+        <style>
+            .logo {
+                width:200px;
+                height:200px;
+            }
+            .login {
+                width:60px;
+                height:30px;
+            }
+            .button {
+                border: none;
+                outline: none;
+                background-color: transparent;
+            }
+
+        </style>
+    </head>
+    <body>
+        <a href="../Index.html">
+            <img class="logo" src="src/images/logo.png" alt="">
+        </a>
+        <h1>회원가입</h1>
+        <!-- 이름 : <input type="text"> 이름을 클릭하면 해당 입력란에 커서 -> 연결시켜야함 -> 의미를 가짐 -->
+
+        <form action="10.oin.html" method="POST"> <!-- <form action="#"novalidate> -->
+            <fieldset> 
+                <legend>필수 입력</legend> <!-- 나중에 css에서 테두리와 제목 다 없앨 수 있음
+                그렇다고 해서 안써줘도 되는건 아니다! => 다른 입력항목과 구분 위해-->
+
+                <p> <!-- 이름과 이메일이 한 블럭을 다 차지하게 만들고 싶다! -> 묶어주어야함, 글씨가 여러개 있어서 p태그 씀 (div도 가능) // span도 그룹화를 해주는 태그이지만 span자체가 인라인요소기 때문에 줄이 안바뀜-->
+                    <label for="username">이름 : </label> <!-- 이 라벨은 누구를 위한 (for) 거냐? 목적대상의 id가 필요-->
+                    <input type="text" id="username" name="username" required minlength="2" maxlength="5" placeholder="NAME"> <!-- 명시적 코딩 : label과 input을 정확히 연결 -->
+                    <!-- size는 너비설정인데 이건 css 에서 -->
+                </p>
+                <p>
+                    <label for="useremail">이메일 : </label>
+                    <input type="email" id="useremail" name="useremail" required placeholder="abc@abc.com"> <!-- 반드시 이메일 형식으로만 입력을 해야함 -> type설정 -->
+                </p>
+                <p>
+                    <label for="userpassword">비밀번호 : </label>
+                    <input type="password" id="userpassword" name="userpassword" required>
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend>부가 입력</legend>
+                <div>
+                    <label for="address">거주지를 선택해주세요.</label>
+                    <select name="address" id="address">
+                        <option value="서울">서울</option>
+                        <option value="경기">경기</option>
+                        <option value="제주">제주</option>
+                    </select>
+                </div>
+                <div>
+                    <h2>성별을 선택해주세요.</h2>
+                    <label for="men">남성</label>
+                    <input type="radio" id="men" name="gender" value="남성">
+
+                    <label for="women">여성</label>
+                    <input type="radio" id="women" name="gender" value="여성">
+
+                    <!-- 아래와 같이 코딩하는 건 암묵적 코딩, 비추 (이렇게 쓰는 사람도 있긴함, 싸우지 말자) -->
+                    <!-- label이 무슨 라벨인지 의미가 없음 -->
+                    <!-- <label>남성
+                    <input type="radio" name="gender1" value="남성"></label>
+                    <label>여성
+                    <input type="radio" name="gender1" value="여성"></label>  -->
+
+                </div>
+                <div>
+                    <h2>관심사항 체크</h2>
+                    <!-- HTML이란 라벨을 클릭하면 input checkbox에 체크가 되도록 -->
+                    <label for="HTML">HTML</label>
+                    <!-- checkbox에 체크가 된다면 이 요소의 value를 data member table - interest field에 저장이 되도록 -->
+                    <input type="checkbox" id="HTML" name="interest" value="HTML">
+                    <label for="CSS">CSS</label>
+                    <input type="checkbox" id="CSS" name="interest" value="CSS">
+                    <label for="Javascript">Javascript</label>
+                    <input type="checkbox" id="Javascript" name="interest" value="Javascript">
+                </div>
+            </fieldset>
+        
+            <!-- 
+            <input type="submit" value="전송"> 어디로 보낼건지의 form이 있어야함
+            <button>전송</button> 버튼은 기본 타입이 submit이라 안써도 됨
+            <button type="reset">초기화</button> 초기화는 요즘잘 없음 (옛날) 
+            -->
+            <button class="button"><img class="login" src="src/images/send.png" alt="send"></button>
+            <!-- 버튼태그는 무조건 회색배경에 테두리가 생김, css로 없앨 수 있음 -->
+            <!-- <input class="login" type="image" src="src/images/send.png" alt="send"> input 으로 이미지 버튼 만들기-->
+        </form>
+        
+        <hr>
+        <hr>
+        <a href="../Index.html">back</a>
+    </body>
+</html>
+
+
+
+
+
+
+
+
