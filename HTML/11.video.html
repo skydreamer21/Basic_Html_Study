@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Audio</title>
+    <style>
+        .logo {
+                width:200px;
+                height:200px;
+            }
+    </style>
+</head>
+<body>
+    <a href="../index.html">
+        <img class="logo" src="src/images/logo.png" alt="logo">
+    </a>
+    <h1>Multimedia</h1>
+    <hr>
+    <a href="#audio">go to audio</a>
+    <hr>
+    <h2>video</h2>
+
+    <video src="https://res.cloudinary.com/bluerose/video/upload/v1646919537/frontend_study/html_study/src/videos/dooropen_lgognl.mp4" controls loop poster="https://res.cloudinary.com/bluerose/image/upload/v1646919893/frontend_study/html_study/src/images/video_image_u5t2mz.png" width="100%"></video>
+    <!-- 위에만 쓰면 됨 -->
+    <!-- poster를 쓰려면 autoplay는 없어야 함 -->
+
+    <!-- youtube vimoe  => 내 서버의 트래픽을 잡아먹지 않는다! -->
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/uwUcaI63d9w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+    <iframe src="https://player.vimeo.com/video/623228716?h=42523dd11b&autoplay=1&loop=1" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+
+    <p><a href="https://vimeo.com/623228716">원신 : GENSHIN CONCERT 2021 - Melodies of an Endless Journey Teaser</a> from <a href="https://vimeo.com/cinenuts">CINENUTS</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+    <p>원신｜GENSHIN impact<br />
+    GENSHIN CONCERT 2021 -Melodies of an Endless Journe<br />
+    <br />
+    Video Produced by Cinenuts</p>
+
+    <iframe src="http://www.daum.net" width="600" height="400" frameborder="0"></iframe>
+    <!-- iframe 이 보안상 조금 취약해서 많은 사이트들에서 연결을 거부함 -->
+
+    <!-- <video controls autoplay muted>
+        <source src="src/videos/dooropen.mp4" type="video/mp4" />
+        <source src="src/videos/dooropen.ogv" type="video/ogv" />
+        <source src="src/videos/dooropen.webM" type="video/webM" />
+        //위의 셋 중에 지원하는 것 있을 때 그것만 보여줌
+        <p> test - fallback contents </p> //이 글씨는 브라우저에서 해당 비디오 지원이 안될때
+    </video>
+    //소리를 음소거 안해주면 브라우저에서 자동재생 차단함
+    //mp4는 모든 브라우저에서 지원하는 동영상 포맷 -->
+    <hr>
+    <h2 id="audio">audio</h2>
+    <audio src="src/audios/bgm1.mp3" controls></audio>
+
+    <hr>
+    <a href="../index.html">back</a>
+</body>
+</html>

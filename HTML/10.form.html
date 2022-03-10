@@ -24,13 +24,13 @@
         </style>
     </head>
     <body>
-        <a href="../Index.html">
+        <a href="../index.html">
             <img class="logo" src="src/images/logo.png" alt="">
         </a>
         <h1>회원가입</h1>
         <!-- 이름 : <input type="text"> 이름을 클릭하면 해당 입력란에 커서 -> 연결시켜야함 -> 의미를 가짐 -->
 
-        <form action="10.oin.html" method="POST"> <!-- <form action="#"novalidate> -->
+        <form action="10.join.html" method="POST"> <!-- <form action="#"novalidate> -->
             <fieldset> 
                 <legend>필수 입력</legend> <!-- 나중에 css에서 테두리와 제목 다 없앨 수 있음
                 그렇다고 해서 안써줘도 되는건 아니다! => 다른 입력항목과 구분 위해-->
@@ -86,6 +86,52 @@
                     <label for="Javascript">Javascript</label>
                     <input type="checkbox" id="Javascript" name="interest" value="Javascript">
                 </div>
+                <div>
+                    <label for="birth">생년월일</label>
+                    <input type="date" id="birth" name="birth">
+                </div>
+                <div>
+                    <label for="career">경력 기간</label>
+                    <input type="number" id="career" name="career" min="0" max="10" value="1" step="2">
+                    <!--은 브라우저별 모양이 다름 -->
+                    <!-- number type의 위아래 화살표나, radio버튼, select 화살표는 css로도 바꿀수 없음 -> script를 이용해야 함 -->
+                    <!-- jqueryui.com => 이미 짜놓은 javascript를 이용 -->
+                    <!-- 어떻게 이용하는지 알기만 하면 될듯 -->
+                </div>
+                <div>
+                    <label for="language">학습언어 선택</label>
+                    <select name="language" id="language">
+                        <optgroup label="frontend"> <!-- optgroup : option들을 그룹 지음 -->
+                            <option value="html">html</option>
+                            <option value="css">css</option>
+                            <option value="javascript">javascript</option>
+                        </optgroup>
+                        <optgroup label="backend">
+                            <option value="asp">asp</option>
+                            <option value="jsp">jsp</option>
+                            <option value="php">php</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div> 
+                    <label for="skill">숙련도</label>
+                    <input type="range" id="skill" name="skill" min="0" max="10" value="5">
+                </div> <!-- range를 쓰는 예로 회전시킬때, 각 회전시킨 모든 사진들이 다 있는것 -->
+                <div>
+                    <label for="phone">phone number</label>
+                    <input type="text" name="phone" id="phone" pattern="[0-9]{1,11}$" maxlength="11" title="숫자만 11자리 이하">
+                </div>
+                 
+                <div>
+                    <label for="useremails">이메일 선택</label>
+                    <input type="text" id="useremails" name="useremails">@
+                    <select title="이메일 서비스 선택" multiple size="2"> <!-- multiple : ctrl 누르고 다중 선택 가능 / size 는 보여지는 크기 -->
+                        <option value="직접입력">직접입력</option>
+                        <option value="naver.com">naver.com</option>
+                        <option value="daum.net">daum.net</option>
+                        <option value="gmail.com">gmail.com</option>
+                    </select>
+                </div>
             </fieldset>
         
             <!-- 
@@ -99,10 +145,31 @@
         </form>
         
         <hr>
+        <meter value="3" max="10" min="0"></meter>
+        <progress value="3" max="10" min="0"></progress>
+        <div class="progress">
+            <div class="bar">60</div>
+        </div>
+        <!-- 보통 진행도를 보여줄때는 위와 같이 div로 직접 짠다 css로 세부사항 만듦-->
+        
         <hr>
-        <a href="../Index.html">back</a>
+        <hr>
+        <a href="../index.html">back</a>
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
