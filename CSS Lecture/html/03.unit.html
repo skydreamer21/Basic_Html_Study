@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        /* px,%,pt
+        cm,mm,pt,meter... => 웹에서 쓸 수 없는 단위
+        */
+        html {
+            height:100%; 
+        }
+        body {
+            width:800px;
+            height:100%;
+            /* overflow:scroll; 자식요소가 부모보다 더 넘치면 스크롤바가 생김 */
+            font-size:20px; /* h요소들은 제외 */
+        }
+        header {
+            width:900px;
+            height:100%;
+            /* width:60%; 사용자가 맞춰놓은 크기의 60% */
+            background-color: silver;
+        }
+        
+        div {
+            width:200px;
+            height:200px;
+            background-color: red;
+        }
+        section {
+            /* width:200px;
+            height:200px;
+            background-color: red; */
+        }
+
+        section p {
+            font-size:20px;
+        }
+
+        aside p {
+            font-size:1.2em;
+            /* 위의 폰트 사이즈가 쓰여지기 전에는 16px -> 여기에 1.2배해서 써라! */ 
+        }
+        aside div {
+            width:6.25em;
+            height:6.25em;
+            /* em이 폰트사이즈의 배수기 때문에 (div길이가 아니고) body에서 지정된 폰트사이즈의 6.25배가 길이가 됨!  */
+        }
+
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <h1>단위</h1>
+    <header> <!-- 블록 요소 -> 다음에 오는게 옆에 붙지 않음 / 너비를 지정하는거랑 차지하는 거랑은 다름 (나중에 바꿀수 있을듯) -->
+        <div>box</div>
+    </header>
+    <section>
+        <h2>section title</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut mollitia nobis quidem, quasi facilis ipsum atque minima architecto, facere ad eum laboriosam? Dolores iure, earum impedit assumenda sunt tempora enim?</p>
+    </section>
+    <hr>
+    <h2>em, rem</h2>
+
+    <aside>
+        <h3>title</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, earum? Rem harum aliquam repellat, in dicta culpa laborum quis asperiores dolorum enim sint corporis nam cumque tempora placeat facilis mollitia.</p>
+        <div>box</div>
+    </aside>
+    <hr>
+    <h2>vw,vh,vmin,vmax</h2>
+</body>
+</html>

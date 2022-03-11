@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COLOR</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        h1 {
+            background-color:silver;
+        }
+        h2 {
+            color:gold;
+        }
+        h3 { /* 가장 많이씀 */
+            color:#0ff;
+        }
+        h4 { /* 투명도를 쓸 때는 가장 많이 씀 */
+            color:rgb(210,12,10);
+            background-color: rgba(255,0,0,.5);
+            /* rgb는 단순 색, 투명도를 주려면 rgba에서 마지막 요소 */
+        }
+        
+        h5 {
+            color:hsl(0,100%,50%); 
+            background-color: hsla(0,100%,50%,.5);
+        }
+
+
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    
+    <h1>color</h1>
+    <h2>color name</h2>
+    <h3>color 16진수 hex Cord</h3>
+    <h4>rgb color</h4>
+    <h5>hsl color</h5> <!-- hsl : hue(색조) saturation(채도) lightness(명도) -->
+
+
+</body>
+</html>
