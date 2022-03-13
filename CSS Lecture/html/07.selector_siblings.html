@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siblings - CSS Selector</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        h2 + ul{ /* h2뒤에 따라오는 ul */
+            background-color: silver;
+        }
+        h2 ~ ul { /* h2 뒤에 따라오는 모든 ul은 다~ (tilde 틸더) (이때 ul은 자식이 아님!) */
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <!-- ul>li*3{menu$} : 약어 ul에 list세개를 각각 menu1,menu2,menu3이 나오게 만들어라-->
+    <h1>Siblings 형제선택자 </h1>
+    <ul>
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+    </ul>
+    <h2>Main title</h2>
+    <ul>
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+    </ul>
+    <h3>Sub title</h3>
+    <ul>
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+    </ul>
+</body>
+</html>

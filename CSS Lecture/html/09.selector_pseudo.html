@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상,그룹 선택자</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        a{
+            text-decoration: none;
+        }
+        a:hover{ /* hover : a 태그 위에 마우스가 올라오면 */
+            text-decoration: underline;
+        }
+        h1:hover{
+            background-color: silver;
+        }
+        h1:hover span{
+            color:blue; 
+        }
+        a, input, button{ /* 그룹선택자 */
+            outline:none;
+        }
+        /* 
+        input{ 포커스가 걸릴때 생기는 네모 바깥선 없애기 
+            outline:none;
+        }
+        button{
+            outline:none;   
+        } 
+        */
+        a:focus, input:focus, button:focus{ /* 링크에 포커스가 있을 때 */
+            background-color: aquamarine;
+        }
+        /* a:focus{ 링크에 포커스가 있을 때
+            background-color: gold;
+        }  */
+        a:active{ /* 링크를 누르고 있을때 */
+            background-color: #000;
+            color:red;
+        }
+        a:visited{ /* 한번 방문한 링크 */
+            color:silver;
+        }
+        /* a:hover, a:focus, a:visited{ 구분이 안되서 이렇게 작성하는 것은 바람직하지 않음
+            color:green;
+        } */
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <h1>Pseudo <span>Selector</span></h1>
+    <a href="">link</a>
+    <a href="" target="self">link</a> 
+    <a href="" target="_blank">naver</a> 
+    <a href="" target="_blank">daum</a> 
+    <form action="">
+        <input type="text">
+        <button>전송</button>
+    </form> <!-- 웹에서 tab을 눌렀을 때 포커스가 걸리는 것 : 링크, input, button -->
+
+</body>
+</html>

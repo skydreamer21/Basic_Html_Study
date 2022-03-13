@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selector</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        header h1{
+            color:red;
+        }
+        header h1 a{ /* a태그는 부모로부터 상속이 안됨 (기본적으로는 상속이 됨) */
+            color:red;
+        }
+        header > p{ /* 부모의 직접적인 자식만 선택 (손자 말고) */
+            color:blue;
+        }
+        p {
+            font-size: 18px;
+        }
+        header p {
+            font-size:1em;
+        }
+        main p {
+            color:green;
+        }
+        main .desc{ /* p의 class 명이 desc라고 main p .desc 라고하면 안됨 */
+            background-color: silver;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <header>
+        <h1><a href="">Logo</a>
+            <span>text</span>
+        </h1>
+        <h2>Sub title</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate sapiente possimus ab odio, sint perferendis atque qui, culpa commodi, eius nemo inventore? Commodi dolores ex quaerat earum nobis porro cumque! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel itaque incidunt natus. Nulla, animi? </p>
+        <div>
+            <p> <!-- 자식의 자식들도 적용됨 -->
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit ex quibusdam ducimus non, delectus veniam vel quidem et doloremque, adipisci neque! Qui, deleniti provident saepe veniam tenetur ullam? Perferendis, reiciendis!
+            </p>
+        </div>
+        <p class="desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam facere modi consequatur quas veniam autem minus architecto dolor aut laborum quaerat, itaque odio laboriosam iusto placeat ducimus ea laudantium rerum?</p>
+    </header>
+    <main>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, assumenda amet! Quo quia tenetur ipsum molestiae dolorum magnam sit, dolores ipsam impedit quos, maiores natus, cum vero cupiditate rem? Exercitationem.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam facere modi consequatur quas veniam autem minus architecto dolor aut laborum quaerat, itaque odio laboriosam iusto placeat ducimus ea laudantium rerum?</p>
+        <p class="desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam facere modi consequatur quas veniam autem minus architecto dolor aut laborum quaerat, itaque odio laboriosam iusto placeat ducimus ea laudantium rerum?</p>
+        <p class="desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quibusdam facere modi consequatur quas veniam autem minus architecto dolor aut laborum quaerat, itaque odio laboriosam iusto placeat ducimus ea laudantium rerum?</p>
+    </main>
+</body>
+</html>

@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Unit</title>
     <link rel="stylesheet" href="../css/logo.css">
     <style>
         /* px,%,pt
         cm,mm,pt,meter... => 웹에서 쓸 수 없는 단위
         */
+        :root { /* rem 기본값 조정 */
+            font-size:30px;
+        }
         html {
             height:100%; 
         }
@@ -17,7 +20,7 @@
             width:800px;
             height:100%;
             /* overflow:scroll; 자식요소가 부모보다 더 넘치면 스크롤바가 생김 */
-            font-size:20px; /* h요소들은 제외 */
+            font-size:16px; /* h요소들은 제외 */
         }
         header {
             width:900px;
@@ -31,24 +34,31 @@
             height:200px;
             background-color: red;
         }
-        section {
-            /* width:200px;
+        /* section {
+            width:200px;
             height:200px;
-            background-color: red; */
-        }
+            background-color: red;
+        } */
 
         section p {
             font-size:20px;
         }
+        aside {
+            font-size: 1.1em; /* 16x1.1 = 17.6px */
+        }
 
         aside p {
-            font-size:1.2em;
+            font-size:1.2em; /* 16 x 1.1 x 1.2 = 21.12px */
             /* 위의 폰트 사이즈가 쓰여지기 전에는 16px -> 여기에 1.2배해서 써라! */ 
         }
         aside div {
             width:6.25em;
             height:6.25em;
             /* em이 폰트사이즈의 배수기 때문에 (div길이가 아니고) body에서 지정된 폰트사이즈의 6.25배가 길이가 됨!  */
+        }
+
+        aside h4 {
+            font-size:2rem; /* 2 x 16 =32px */
         }
 
     </style>
@@ -68,6 +78,7 @@
 
     <aside>
         <h3>title</h3>
+        <h4>sub title</h4>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, earum? Rem harum aliquam repellat, in dicta culpa laborum quis asperiores dolorum enim sint corporis nam cumque tempora placeat facilis mollitia.</p>
         <div>box</div>
     </aside>
