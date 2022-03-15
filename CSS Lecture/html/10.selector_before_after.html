@@ -4,10 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>before, after selector</title> <!-- 굉장히 활용도가 높음 (많이씀) -->
     <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        .content-tt:before{
+            content:'-           '; /* 공백이 엄청많아도 하나만 적용 */
+        }
+        .content-tt:after{
+            content:' -';
+        }
+        
+    </style>
 </head>
 <body>
     <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <h1>before, after selector</h1>
+    <h2>title</h2> 
+    <h2 class="content-tt">title</h2> 
+    <h3 class="content-tt">title</h3> 
+    <h2>title</h2> 
 </body>
-</html>
+</html> 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부정 선택자</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        header h2, header p, header a{
+            color:green;
+        }
+        header h2~* { /* body 안의 h2 뒤에 모든 요소 */
+            text-decoration: underline;
+        }
+        header *:not(h1)::after {
+            content:' - good';
+        }
+        ul li:nth-child(-n+3) {
+            background-color: silver;
+        }
+        ul li:not(:last-child) { /* 괄호안에 :앞에는 맨앞의 li가 자동 적용 */
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <h1>부정 선택자</h1>
+    <header>
+        <h1>logo</h1>
+        <h2>main title</h2>
+        <p> Brief Description</p>
+        <a href="">read more</a>
+        <p>last</p>
+    </header>
+    <ul>
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+        <li>list item</li>
+    </ul>
+</body>
+</html>

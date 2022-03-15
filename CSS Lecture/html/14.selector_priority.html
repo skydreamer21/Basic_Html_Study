@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priority - CSS Selector</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        #text { /* 100점 */
+            color:green;
+        }
+        .area p { /* 10+1=11점 */
+            color:blue;
+        } 
+        p { /* 아래 있는, 즉 가장 최신에 작성한게 가장 우선순위가 높다. */
+            color:red;
+        } /* 1점 */
+        #text2{
+            color:red !important; /* 우선순위 가장 높음 */
+        }
+        #text2 {
+            color:black; 
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <div class="area">
+        <p id="text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero amet dicta doloremque qui. Illo cupiditate doloremque, non nostrum accusantium eveniet dolorum maxime sequi consectetur excepturi, aut rerum ea aperiam quisquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex rerum illo veniam quisquam asperiores tenetur numquam cumque voluptatum maiores. Consequuntur dolores at iure iusto laborum enim optio voluptatem veniam repellat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, officia? Odit aliquid quod animi! Repellat debitis, numquam sunt sapiente officiis harum provident praesentium. Hic incidunt deserunt animi ex non quibusdam.
+        </p>
+        <p id="text2", style="color:blue"> <!-- 인라인스타일 점수 1,000점 (우선순위는 높지만 바람직하지는 않음 why? 태그까지 와서 직접 고쳐야 하니까!) -->
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quasi numquam nostrum nisi debitis assumenda molestiae iusto, delectus, aspernatur, temporibus accusamus ipsa culpa inventore! Expedita nesciunt totam commodi culpa dignissimos? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum velit repellat ab, exercitationem veritatis, at aut deserunt incidunt repellendus molestiae quasi ad eligendi dolorum quo assumenda inventore voluptas id. Adipisci?
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Noto+Sans+KR&display=swap" rel="stylesheet">폰트를 로드, 어디에 쓴다고 하는건 다른 것 -->
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Merriweather+Sans:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Roboto+Mono:ital,wght@1,100&display=swap" rel="stylesheet">
+    <script> /* Adobe typekit */
+        (function(d) {
+          var config = {
+            kitId: 'qqy5fxs',
+            scriptTimeout: 3000,
+            async: true
+          },
+          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+    </script>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap');
+        .en {
+            font-family: 'Merriweather Sans', sans-serif;
+            font-size:2em;
+            font-weight:600; /* font weight 700 이 Bold */
+            /* 웹에서 지정해주는 굵기 등을 적용할 때와 폰트에서 제공해주는 굵기를 적용한 것이랑 느낌차이가 많을 수 있음. 그럴 때는 폰트 굵기 까지 받아서 */
+        }
+        .ko {
+            font-family: 'Gowun Dodum', sans-serif;
+            font-size:2em;
+        }
+        p span {
+            /* font-family: 'Nanum Gothic', sans-serif;
+            font-weight:bold; */
+            font-family: rixrak-sans-pro, sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            color:violet;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <p class="ko">
+        웹 표준은 월드 와이드 웹의 <span>측면을 서술하고 정의하는 공식 표준이나 다른 기술 규격을 가리키는 일반적인 용어이다.</span> 최근에 이 용어는 웹 사이트를 작성하는 데 중요도가 높아지고 있으며 웹 디자인, 개발과 관계가 있다.
+    </p>
+    <p class="en">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor impedit laborum quas exercitationem eaque nemo consequatur omnis magni illo veniam? Porro obcaecati, quod provident consequatur laborum eaque veritatis earum quis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti maiores excepturi magni eum facilis, perspiciatis, consequuntur tempora dignissimos quaerat repellendus voluptates, reiciendis vitae voluptatem et illo! Magnam quas repellat minus!
+    </p>
+</body>
+</html>

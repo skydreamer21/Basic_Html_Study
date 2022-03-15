@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Align</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        h1{ /* 이 border를 통해서 이미지를 넣었을 때 밑에 빈 공간이 생기는 것을 알 수 있음 -> 모든 브라우저에서 이렇게 됨 */
+            border: 1px solid;
+        }
+        h1 img{
+            width:500px; /* 높이나 너비만 지정하면 비율에 맞게 줄어들거나 늘어남 */
+        }
+        img{ /* 빈 공간 없애기 -> 필수로 들어가는 코드 (항상 밑에 빈공간이 생기기 때문에) */
+            vertical-align:top;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <h1>
+        <img src="../src/images/coffee-792113_1920.jpg" alt="">
+    </h1>
+</body>
+</html>

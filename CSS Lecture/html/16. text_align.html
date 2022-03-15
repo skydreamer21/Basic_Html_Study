@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>letter-spacing, word-spacing, line-height</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        body {
+            font-size:16px;
+        }
+        h1{
+            font-size:3em;
+            font-weight:700; /* lighter, normal, bold / 300,400,700 ... */
+            text-decoration: line-through; /* 쇼핑몰 할인가 */
+            text-decoration: overline;
+            letter-spacing: 1em;
+            /* font-size:medium; medium : 16px */
+            /* 
+            medium : 16px
+            large : 
+            x-large : 
+            xx-large : 
+            는 비추 (방법이 있다는 것..)
+
+            body의 폰트보다 더 크게 또는 작게 : larger, smaller (이것도 역시 비추)
+            */
+            
+        }
+        em,address {
+            font-style:normal;
+        }
+        del{
+            /* font-style:italic; */
+            font-style:oblique; /* italic 과 같은 것  */
+        }
+        .left{ /* align : 정렬 */
+            text-align:left;
+            word-spacing:2em;
+        }
+        .center{
+            text-align:center;
+            line-height:40px;
+        } 
+        .right{
+            text-align:right;
+        }
+        .etc{
+            text-align:right;
+        }
+        h2{
+            width:300px;
+            border:2px solid red;
+            height:60px;
+            text-align:center;
+            line-height:60px; /* 한 줄만 있을 때 사용할 수 있는 방법 -> h2의 높이와 똑같이 맞춰주면 중앙에 위치함 */
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <div class="area">
+        <h1>글자의 정렬</h1>
+        <h2>line height</h2>
+        <del>1,000,000원</del> <!-- html에서 지원하는 line-through 기능 (css로 처리하는 것이 나음) -->
+        <p class="left"> <em>Lorem ipsum</em> dolor sit amet consectetur, adipisicing elit. Possimus qui laborum vitae numquam neque optio repellat obcaecati exercitationem debitis error iste deserunt, consequuntur id expedita non cumque commodi suscipit modi.</p>
+        <p class="center"> <em>Lorem ipsum</em> dolor sit amet consectetur, adipisicing elit. Possimus qui laborum vitae numquam neque optio repellat obcaecati exercitationem debitis error iste deserunt, consequuntur id expedita non cumque commodi suscipit modi.</p>
+        <p class="right"> <em>Lorem ipsum</em> dolor sit amet consectetur, adipisicing elit. Possimus qui laborum vitae numquam neque optio repellat obcaecati exercitationem debitis error iste deserunt, consequuntur id expedita non cumque commodi suscipit modi.</p>
+        <address> 
+            &copy; all right reserved. <br/>
+            contact us.
+        </address>
+        <p class="etc"> <!-- span은 inline 요소, 정렬을 하게 되면 span태그들도 정렬이 됨 -->
+            <span>line element</span>
+            <span>line element</span>
+            <span>line element</span>
+        </p>
+    </div>
+</body>
+</html>

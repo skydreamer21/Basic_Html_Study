@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nth-child selector</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        nav ul li:first-child{
+            background-color: silver;
+        }
+        nav ul li:nth-child(3){ /* li:nth-child */
+            background-color: darkgrey;
+        }
+        nav ul li:last-child{
+            background-color: lightsalmon;
+        }
+        /* 첫째,셋째,막내 */
+        nav ul li:first-child,
+        nav ul li:nth-child(3),
+        nav ul li:last-child 
+        {
+            color:darkmagenta;
+            font-weight:bold;
+        }
+        nav ul li:nth-child(2n+1)::after{ /* n은 항상 0부터 들어옴, 곱셈할때 *안써도 곱셈처리 됨 / 2n-1해도 됨 */
+            content:' - 홀수 리스트';
+            color:black;
+        }
+        nav ul li:nth-child(even)::after{ /* even, odd 를 사용해서도 짝,홀 지정가능 */
+            content:' - 짝수 리스트';
+            color:black;
+        }
+        nav ul li:nth-child(n+3){ /* 3이상의 리스트에 대해서 */
+            text-decoration: underline;
+        }
+        nav ul li:nth-child(-n+3)::before { /* 0부터 들어온다고 했을 때 이 수가 양수라면 3이하의 수들이 선택 */
+            content:'(3이하) ';
+        }
+        nav ul li:nth-child(n+2):nth-child(-n+5) { /* 범위 지정 */
+            text-decoration:line-through;
+        }
+        nav ul li+li{ /* 첫째빼고 나머지 모두 선택 */
+            font-size:1.1em;
+        }
+        h2:nth-child(5){ /* body의 child 중 5번째인 h2태그 */
+            background-color: silver;
+        }
+        h2:nth-of-type(3){ /* h2 태그들 중 2번째 nth 자리에는 first, last가 들어올 수 */
+            background-color: lightcyan;
+        }
+        h2:not(h2:nth-of-type(4)){ /* E:not(s) : 선택자 s가 아닌 모든 E요소에 적용 */
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <h1>구조 선택자</h1>
+    <!-- ul>li*5{list$} 약어 파악해보기-->
+    <nav>
+        <ul>
+            <li>list1</li>
+            <li>list2</li>
+            <li>list3</li>
+            <li>list4</li>
+            <li>list5</li>
+            <li>list6</li>
+        </ul>  
+    </nav>
+    <hr>
+    <h2>heading 2</h2>
+    <h2>heading 2</h2>
+    <h2>heading 2</h2>
+    <h2>heading 2</h2>
+    <h2>heading 2</h2>
+
+</body>
+</html>
