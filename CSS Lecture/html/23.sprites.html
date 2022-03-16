@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprites - CSS</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        li a {
+            background-image: url(../src/images/tab_sprites1.png);
+            width:98px; /* 포토샵으로 크기를 알아냄 */
+            height:25px;
+            display:block; /* 없으면 이미지 크기가 안먹습니다 -> a태그가 인라인 요소라서 */
+            text-indent: -9999em;
+        }
+        li:nth-child(2) a{
+            background-position: -101px -1px; /* a태그 위치 기준으로 -100px위치에 배경이미지가 놓이게 한다. (왼쪽) */
+        }
+        li:last-child a{
+            background-position: -201px -1px;
+        }
+        li:nth-child(1) a:hover{
+            background-position: 0px -29px; /* a태그 위치 기준으로 -100px위치에 배경이미지가 놓이게 한다. (왼쪽) */
+        }
+        li:nth-child(2) a:hover{
+            background-position: -101px -29px; /* a태그 위치 기준으로 -100px위치에 배경이미지가 놓이게 한다. (왼쪽) */
+        }
+        li:last-child a:hover{
+            background-position: -201px -29px;
+        } /* 위에가 전부 이미지 하나를 활용해서 background-position을 옮겨가며 만든 케이스 -> 일반적인 기술 */
+        /* 옛날에는 다 쪼갠 이미지로 했지만 그렇게 하면 용량차이가 5배 10배 차이가 날 수 있음 */
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <ul>
+        <li><a href="#">스타</a></li>
+        <li><a href="#">프로그램</a></li>
+        <li><a href="#">이슈</a></li>
+    </ul>
+</body>
+</html> 

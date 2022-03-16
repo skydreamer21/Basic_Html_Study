@@ -56,6 +56,17 @@
             text-align:center;
             line-height:60px; /* 한 줄만 있을 때 사용할 수 있는 방법 -> h2의 높이와 똑같이 맞춰주면 중앙에 위치함 */
         }
+        h3 a{
+            /* text-indent: -999em; 안보여줄껄 왜썼니? */
+            background-image:url(../src/images/mlogo.png);
+            background-size:cover;
+            /* cover : 이미지가 더 크다는 가정하에 가능한 작게 / contain : 이미지가 더 작다는 가정하에 가능한 크게 */
+            width:300px; /* 인라인요소는 크기를 모르는 요소 -> block요소들만 알기 때문에 블럭요소라고 하기 전에는 안먹음 */
+            height:150px;
+            display:block;
+            text-indent:-9999em; /* 왜 글씨는 안지워? -> 검색이 더 잘 되기 때문 */ /* text indent가 가장 많이 쓰이는 곳 */
+            /* 대부분의 사이트의 로고가 이런식으로 구현이 되어 있음. -> Image Replacement (IR) */
+        }
     </style>
 </head>
 <body>
@@ -63,6 +74,7 @@
     <div class="area">
         <h1>글자의 정렬</h1>
         <h2>line height</h2>
+        <h3> <a href="#">Logo</a></h3>
         <del>1,000,000원</del> <!-- html에서 지원하는 line-through 기능 (css로 처리하는 것이 나음) -->
         <p class="left"> <em>Lorem ipsum</em> dolor sit amet consectetur, adipisicing elit. Possimus qui laborum vitae numquam neque optio repellat obcaecati exercitationem debitis error iste deserunt, consequuntur id expedita non cumque commodi suscipit modi.</p>
         <p class="center"> <em>Lorem ipsum</em> dolor sit amet consectetur, adipisicing elit. Possimus qui laborum vitae numquam neque optio repellat obcaecati exercitationem debitis error iste deserunt, consequuntur id expedita non cumque commodi suscipit modi.</p>

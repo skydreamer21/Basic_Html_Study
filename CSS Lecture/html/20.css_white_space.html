@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        body{
+            font-size:16px;
+        }
+        .area{
+            width:500px;
+            
+            background-color: silver;
+            margin-bottom: 50px;
+        }
+        .nowrap{ /* 벽에 부딪혀도 줄넘김을 하지 마! */
+            white-space:nowrap; /* 보통 이게 많이 쓰임 - 줄넘김을 할꺼냐 말꺼냐 */
+            height:70px;
+        }
+        .pre {
+            white-space: pre;
+        }
+        .pre-wrap{
+            white-space: pre-wrap;
+        }
+        .pre-line{
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <p class="area nowrap">
+        Lorem                ipsum dolor sit amet consectetur adipisicing elit. Facere aliquam, numquam illo, repudiandae est modi neque nesciunt enim molestias eos, dolor quos! Magni consequuntur earum molestias doloribus provident facilis in.
+    </p>
+    <p class="area pre">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Recusandae cupiditate ab, 
+        perspiciatis 
+        enim aliquam, earum consequuntur possimus, explicabo qui 
+        omnis similique dolorem. 
+        Omnis voluptatum 
+        nemo facere distinctio tempora natus recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem quo odit
+    </p>
+    <p class="area pre-wrap">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Recusandae cupiditate ab, 
+        perspiciatis 
+        enim aliquam, earum consequuntur possimus, explicabo qui 
+        omnis similique dolorem. 
+        Omnis voluptatum 
+        nemo facere distinctio tempora natus recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem quo odit
+    </p>
+    <p class="area pre-line">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Recusandae cupiditate ab, 
+        perspiciatis 
+        enim aliquam, earum consequuntur possimus, explicabo qui 
+        omnis similique dolorem. 
+        Omnis voluptatum 
+        nemo facere distinctio tempora natus recusandae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem quo odit
+    </p>
+</body>
+</html>

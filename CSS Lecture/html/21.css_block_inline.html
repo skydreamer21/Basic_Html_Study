@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Inline</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        h1{
+            background-color:blue;
+            color:#fff;
+            width:300px;    
+        }
+        span {
+            background-color: blue;;
+            color:#fff;
+            width:300px;    
+            display:block;
+        }
+        p {
+            text-align:center;
+        }
+        p a{
+            background-color: blue;
+            color:#fff;
+            text-decoration: none;
+            width:40px;
+            height:40px;
+            /* display:block; 문제, 크기는 생겼으나 Block요소로 인해 가운데로 가질 않음 -> inline-block */
+            display:inline-block;
+            line-height: 40px;
+            /* font-size:40px; */
+        }
+        .hidden{
+            display:none; /* 안보이게 하기 */
+        }
+        .hide{
+            /* display:none; */
+            visibility: hidden;
+        }
+        div i {
+            display:list-item; /* 리스트가 아닌것을 리스트처럼 -> 리스트로 만들자... */
+        }
+        .services{ 
+            display:table; /* 이 요소는 이 클래스의 태그에 영향을 미치는게 아니라 이 클래스의 자식요소에 영향을 미침! */
+            width:100%;
+            border:1px solid;
+        }
+        .services div{
+            display:table-cell;
+            width:50%; /* 복습 : %는 부모가 만들어준 너비에서의 비율 */
+        }
+        /* 여기까지는 굉장히 오래된 테크닉 -> 전부 한계에 부딪혔음 */
+        /* 최근 트렌드는 레이아웃을 깨는 것으로 감 -> flex ---> css grid ... */
+        .overflow{
+            text-align: left;
+            background-color: silver;
+            border:1px solid;
+            height:100px; /* 브라우저 창을 줄이면 글씨가 border밖으로 삐져나감 */
+            /* 경우에 따라서는 넘치는것은 보이지 않게 할 수도 있음 -> overflow */
+            /* overflow:visible; 원래속성 */
+            /* overflow: hidden; */
+            /* hidden 에서도 x-hidden, y-hidden 어느방향이 넘치는 것을 가릴 것인지 정할 수 있음 */
+            /* overflow: scroll; 회원가입할 때 약관  -> 근데 가로방향도 스크롤 바가 생김 */
+            overflow: auto; /* 넘치는 곳에만 스크롤 생성 */
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    
+    <h1> heading 1</h1>
+    <span>span tag</span>
+    <div class="hidden">hidden area</div>
+    <h2 class="hide">heading 2</h2>
+    <p> <!-- pagination 보통 센터에 위치 -->
+        <a href="">1</a>
+        <a href="">2</a>
+        <a href="">3</a>
+        <a href="">4</a>
+        <a href="">5</a>
+    </p>
+    <div>
+        <i> list</i> <!-- 그냥 단순히 이탤릭체로 표현 <-> em태그 -> semantic -->
+        <i> list</i>
+        <i> list</i>
+        <i> list</i>
+    </div>
+    <div class="services">
+        <div>mobile</div>
+        <div>web application</div>
+    </div>
+    <p class="overflow">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error culpa quod ut! Quia praesentium laboriosam exercitationem dolores rerum libero sunt! Ex consequuntur vel totam, cumque inventore modi commodi earum nobis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, voluptatum? Nam in dolorum dicta. Totam animi enim vitae laborum delectus, ipsum eaque possimus quis facilis esse debitis obcaecati qui hic.
+    </p>
+</body>
+</html>
