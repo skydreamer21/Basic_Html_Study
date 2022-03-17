@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box model</title>
+    <link rel="stylesheet" href="../css/logo.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        a:first-child{
+            display:block;
+        }
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            font: 16px/1.6 'Fredoka', sans-serif; 
+            /* font 를 사용하려면 font-size와 font-family 가 반드시 들어가야함 -> 하나라도 없으면 다른 속성이 안먹힘 */
+            /* 자세한건 MDN reference */
+        }
+        .boxmodel{
+            /* border: 5px solid darkkhaki;   */
+            /* 이렇게 합쳐 쓰는 건 border의 두께가 위아래양옆이 모두 똑같을 때 */
+            /* border-width:5px 10px;
+            border-style: solid dotted dashed solid;
+            border-color:darkkhaki blue black; 
+            */ /* 여기까지는 같던 다르던 4개방향 모두 줄때 */
+            /* border-right : 5px solid khaki; 이건 나눠쓸 필요 없음  */
+
+            /* 
+            border-right-width:50px; 이런식으로 나누어씀. (만약 쓴다면)
+            */
+            
+            /* border-radius:20px 5px 0px; */
+            /* border-bottom-right-radius: 100px 50px; 가로, 세로 반경을 다르게 할 수도 있음 */
+            /* border-radius:100px / 50px; 만약 모든 모서리에 적용하고 싶을때 (안예쁘지만..) */
+            /* border-top-left-radius:30px; */
+            /* 방향을 할 때는 먼저 상하부터 입력 -> 좌우   border-right-top 이런건 안됨 */
+
+            
+            /* padding: 10px 40px; 방향지정해서 여백주는것 다 똑같음 */
+            /* padding:20px; */
+            margin:100px auto; /* 방향지정하는 건 똑같음 */
+            /* margin-top:100px; 마이너스하면 바깥으로 벗어남 */
+            /* margin-left:-100px; 이를 이용해서 양옆위아래로 움직일 수 있음*/
+            width:500px;
+            /* height : 300px; */
+            /* content가 paragraph일 때 컨텐츠 양은 정해져있지 않다고 보는게 좋음. 따라서 들어오는대로 높이가 자연스럽게 잡히는게 좋음 -> 높이는 안주는게 좋다 (안주면 자동으로 알맞게 잡힘)*/
+            
+             /* 좌우를 auto margin을 주면 브라우저 화면이 어떤크기이든 항상 가운데에 위치함 -> 네이버 메인에서도 확인 가능*/
+
+             /* CSS 20강 border안에 패딩을 주면서 전체 크기는 바뀌지 않게 */
+             /* 가장 무식한 방법 : 패딩까지 고려한 width로 바꿔주기 */
+             /* 두가지 방법이 있음 */
+             
+             /* 1번째 방법 */
+
+
+            border:5px solid black;
+            padding:20px;
+            /* box-sizing:content-box; 기본값 : box size를 뭘 기준으로 할래? 안에 들어있는 content를 기준으로 할꺼야 */
+            box-sizing:border-box; /* 굉장히 많이 씀 */
+            display:block;
+        }
+
+        /* .boxmodel p { 첫번째 방법 -> 안쪽 요소에 주면 전체 크기 500에 맞춰서 자동으로 줄음 
+            padding:20px;
+            width를 지정하기전에는 부모가 지정해준 width내에서 padding을 뽑음
+        } 하지만 만약에 boxmodel 안에 다른 요소가 들어오면 그녀석한테도 똑같이 padding을 줘야한다는 단점이 있음. */
+
+        div p {
+            text-align:justify;
+            word-break:break-all;
+            
+        }
+        .circle{
+            width:300px;
+            height:300px;
+            background:green;
+            color:#fff;
+            border:2px solid black;
+            border-radius:50%; /* 만약 원을 만든다고 할 때 퍼센트로 하는게 훨씬더 정확함 -> 원을 그리는 방법 */
+            text-align:center;
+            font-size:5em;
+            line-height:300px;
+            /* 만약 타원을 만든다고 하면 width와 height를 다르게 해주면 됨 */
+        }
+        .box{
+            width:500px;
+            border:3px solid;
+            background:#ddd;
+            margin:20px; /* 박스와 박스사이는 마진 하나만 적용 -> 세로만 중첩되어서 하나만 나옴(max값이 나옴)  */
+            /* 마진을 줄때 양쪽을 합쳐서 얼마 이게 아니고 한쪽에만 주어야 함 */
+        }
+        .second{margin-top:40px;}
+    
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <div lang="en" class="boxmodel">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+    </div>
+
+    <span>inline element</span>
+    <div class="circle">
+        circle
+    </div>
+    <div class="box">box</div>
+    <div class="box second">box</div>
+    <div class="box">box</div>
+</body>
+</html>

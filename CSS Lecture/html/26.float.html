@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float - CSS</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        h2{
+            background-color: silver;
+            /* float:left; */
+            margin-bottom: 50px;
+        }
+        .thumb{
+            float:left;
+        }
+        .content p {
+            word-break:break-all;
+        }
+        .break{
+            clear:left; /* float이 왼쪽에 걸려있던 것을 clear해라 -> float이랑 맞추어야 함 */
+            clear:both; /* 방향이 어디든 다 풀어라 */
+        }
+        .portfolio {
+            background-color: green;
+        }
+        .portfolio:after{ /* clear용도 */
+            content:'';
+            clear:both; /* 여기까지 했을 때 clear가 안먹는 이유 : after가 인라인 요소라서 -> 바꿔주자! */
+            display:block;
+        }
+        .portfolio p{
+            border: 2px solid;
+            float:left; /* portfolio안의 모든 p에 float을 다 걸면 content가 있는데도 불구하고 높이가 0이나옴 */
+            
+        }
+        img{ /* 원하지 않는 공백이 나오기 때문에 항상 쓰고 시작 */
+            vertical-align: top;
+        }
+        .clear{
+            clear:both;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <h1>float</h1>
+    <h2>float 특징</h2>
+    <div class="content">
+        <img src="https://dummyimage.com/100" alt="" class="thumb">
+        <p> <!-- h2 float속성이 있으면 p태그의 content가 hr를 감싼다. -->
+            paragraph paragraph
+            paragraph paragraph
+            paragraph paragraph
+            paragraph paragraph
+            paragraph <br class="break"/>paragraph
+            paragraph paragraph
+            paragraph paragraph
+            paragraph paragraph
+            paragraph paragraph
+            paragraph paragraph
+            paragraph paragraph
+            paragraph paragraph
+            paragraph paragraph
+            paragraph paragraph
+            paragraph paragraph
+            paragraph paragraph
+            paragraph paragraph
+            paragraph paragraph
+        </p>
+    </div>
+    <hr>
+    <div class="portfolio">
+        <p>
+            <img src="http://dummyimage.com/100" alt="" alt="portfolio img">
+        </p>
+        <p>
+            <img src="http://dummyimage.com/100" alt="" alt="portfolio img">
+        </p>
+        <p>
+            <img src="http://dummyimage.com/100" alt="" alt="portfolio img">
+        </p>
+        <!-- <div class="clear"></div>  -->
+        <!-- 플롯해지 -> 바람직하지 않음 왜? content가 없으니까 무의미함 -->
+    </div>
+</body>
+</html>
