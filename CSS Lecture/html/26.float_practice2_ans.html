@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float - practice2 (Ans)</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        header {
+            width:960px;
+            background-color: #ccc;
+            margin:0 auto;
+            line-height:60px;
+        }
+        h1 {
+            float:left;
+        }
+        nav {
+            float:right;
+        }
+        header:after{
+            content:'';
+            display:block;
+            clear : both;
+        }
+        nav ul li {
+            float:left;
+            list-style:none;
+            margin-left:20px; /* 오른쪽에 주면 마지막 child에 없애는 것을 붙여야함. */
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <header>
+        <h1><a href="#">Logo</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#">login</a></li>
+                <li><a href="#">Member Join</a></li>
+                <li><a href="#">Site map</a></li>
+                <li><a href="#">Location</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>

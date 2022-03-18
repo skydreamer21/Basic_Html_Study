@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float Practice</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        .portfolio {
+            width:960px;
+            background-color: black;
+            border:1px solid #ccc;
+            /* box-sizing: border-box; */
+        }
+        ul>li>ul {
+            /* height:225px; */
+            margin-bottom:20px;
+            /* border:1px dotted #fff; */
+        }
+        ul>li:last-child>ul {   
+            margin-bottom:0px;
+        }
+        ul>li>ul>li {
+            width:225px;
+            height:225px;
+            background-color: green;
+            margin-right:20px;
+            float:left;
+        }
+        ul>li>ul>li:last-child {
+            margin-right:0;
+        }
+        ul>li>ul:after { /* li의 마지막에 넣는다고 li:last-child가 아니고 after자체가 마지막 -> ul:after */
+            content:'';
+            clear:both;
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <h1>Practice 1</h1>
+    <ul class="portfolio">
+        <li>
+            <ul>
+                <li>pic1</li>
+                <li>pic2</li>
+                <li>pic3</li>
+                <li>pic4</li>
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <li>pic1</li>
+                <li>pic2</li>
+                <li>pic3</li>
+                <li>pic4</li>
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <li>pic1</li>
+                <li>pic2</li>
+                <li>pic3</li>
+                <li>pic4</li>
+            </ul>
+        </li>
+        <li>
+            <ul>
+                <li>pic1</li>
+                <li>pic2</li>
+                <li>pic3</li>
+                <li>pic4</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

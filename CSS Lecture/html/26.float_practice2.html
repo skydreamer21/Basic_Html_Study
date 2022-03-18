@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float practice3</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        header {
+            width:960px;
+            height:60px;
+            background:#ccc;
+            margin : 0 auto;
+        }
+        header > * {
+            line-height:60px;
+        }
+        h1 {
+            /* display:inline; */
+            float:left;
+        }
+        /* h1:after{
+            content:'';
+            display:block;
+            clear:both;
+        } */
+        ul {
+            text-align:right;
+            /* display:inline;   */
+            /* line-height:60px; */
+        }
+        li {
+            list-style:none;
+            display:inline;
+            margin-right:20px;
+        }
+        li:last-child {
+            margin-right:0;
+        }
+        a {
+            text-decoration: none;
+            color:black;
+        }
+        
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <header>
+        <h1><a href="#">Logo</a></h1>
+        <nav>
+            <ul>
+                <li><a href="#">login</a></li>
+                <li><a href="#">Member Join</a></li>
+                <li><a href="#">Site map</a></li>
+                <li><a href="#">Location</a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
