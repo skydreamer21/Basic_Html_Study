@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        a:first-child {
+            display:block;
+            margin-bottom:50px;
+        }
+        .lastest-news{
+            float:left;
+            width:350px;
+            height:145px;
+            border:2px solid #ccc;
+            position:relative;
+        }
+        .read-more{
+            color:#fff;
+            background-color: #000;
+            text-decoration: none;
+            line-height:30px;
+            padding:0 10px;
+            position:absolute;
+            right:0px;
+            bottom:calc(100% + 10px); /* read more의 높이가 바뀌어도 위로 10px 유지함 */
+
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <div class="answer"></div>
+    <div class="lastest-news">
+        <ul>
+            <li>리스트 1</li>
+            <li>리스트 2</li>
+            <li>리스트 3</li>
+            <li>리스트 4</li>
+            <li>리스트 5</li>
+        </ul>
+        <a href="#" class="read-more">Read more</a> <!-- 디자인 상에서는 리스트 바깥에 있는 것처럼 보이지만 read more자체의 관련성을 고려해서 안쪽에 위치시켜야 함. => semantic coding -->
+    </div>
+</body>
+</html>

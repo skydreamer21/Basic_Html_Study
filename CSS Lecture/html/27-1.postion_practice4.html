@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position practice4</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        .mainmenu{
+            background-color: black;
+            color:white;
+            padding-left:40px;
+            width:600px; 
+        }
+        li{
+            line-height: 35px;
+        }
+        ul>li>ul {            
+            background-color: rgb(66, 66, 66);
+            display:none;
+        }
+        
+        .mainmenu>li{
+            list-style: none;
+            margin-right:30px;
+            float:left;
+        }
+        .mainmenu>li:hover>ul{
+            display:block;
+            position:absolute;
+        }
+        .mainmenu:after{
+            content:'';
+            display:block;
+            clear:both;
+        }
+        .mainmenu > li ul li {padding:0 10px;}
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+
+    <ul class="mainmenu">
+        <li>About us
+            <ul>
+                <li>ceo greeting</li>
+                <li>history</li>
+                <li>vision</li>
+            </ul>
+        </li>
+        <li>Works
+            <ul>
+                <li>Design</li>
+                <li>Mobile</li>
+            </ul>
+        </li>
+        <li>Services</li>
+        <li>Location</li>
+    </ul>
+</body>
+</html>

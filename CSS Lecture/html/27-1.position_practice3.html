@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position practice3</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        img{
+            vertical-align: top;
+        }
+        .html5-slide{
+            padding:10px;
+            border:2px solid green;
+            position : relative;
+            width:800px;
+            height: 300px;
+            margin : 0 auto;
+            
+        }
+        div>img {
+            float:left;
+        }
+        /* .controls{
+            position:absolute;
+            right:0;
+            top:calc(50% - 20px);
+        } */
+        .controls a {
+            display:block;
+            background-color: black;
+            color:white;
+            line-height: 50px;
+            text-align: center;
+            white-space: nowrap;
+            position:absolute;
+            top:calc(50% - 25px);
+        }
+        .Prev {
+            right:100%;
+        }
+        .Next {
+            left:100%;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <div class="html5-slide">
+        <img src="https://dummyimage.com/300x250" alt="slide1">
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam fugiat ipsam incidunt dolor nesciunt, praesentium sequi eius quisquam sapiente necessitatibus aspernatur alias quis voluptate ex error perferendis. 
+        </p>
+        <div class="controls">
+            <a href="#" class="Prev">Previous project</a>
+            <a href="#" class="Next">Next project</a>
+        </div>
+    </div>
+</body>
+</html>

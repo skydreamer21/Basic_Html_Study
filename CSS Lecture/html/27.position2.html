@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position2 - CSS</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        img{
+            vertical-align:top;
+        }
+        .box{
+            border:1px solid;
+            padding:10px;
+            position:relative; /* relative는 position을 주기 전의 자리가 기준이 되어서 움직임 */
+            /* relative에서 움직이는 건 아무도 모름 -> 다른 요소들과 겹치게 됨 */
+            /* 밀리게 하려면 margin */
+            /* position 기본값은 static */
+        }
+        .a {
+            background-color: blue;
+            left:50px; /* position이 없으면 이 값들은 무용지물  */
+            top:50px;
+        }
+        .b{
+            background-color: red;
+            left:50px;
+            top:100px;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <div class="box a"><img src="https://dummyimage.com/100x120" alt=""></div>
+    <div class="box b"><img src="https://dummyimage.com/100x120" alt=""></div>
+    <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quis qui saepe dolorem. Quasi, nulla aut quisquam reprehenderit, animi tenetur temporibus earum culpa ipsam nesciunt sunt veniam est error nobis.
+        Tempora vitae voluptatibus in minima, nesciunt esse natus iure reprehenderit fugiat! Sapiente fuga totam laborum architecto debitis nulla ullam voluptates quasi et iste eveniet, illum atque quo itaque. Nisi, odio?
+        Reiciendis minus asperiores quod qui, necessitatibus tempora. Sequi eveniet dicta vitae culpa cum laborum ad asperiores, hic odio dolor nihil consequuntur earum dignissimos corrupti? Natus iusto eaque accusamus officia repudiandae.
+    </p>
+</body>
+</html>
