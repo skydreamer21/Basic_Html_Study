@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ani_prac1_ans2</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        .photo{
+            width:400px;
+            height:200px;
+        }
+        li{
+            list-style:none;
+            width:400px;
+            height:200px;
+            position:relative;
+            overflow:hidden;
+        }
+        li span{
+            position:absolute;
+            /* width:100%; height:100%;  이렇게 해도 되지만 만약 안에 padding등을 구현한다면 크기가 커지는 문제가 생김  */
+            left:100%; top:0; right:-100%; bottom:0;  /* 안에 뭘 구현하더라도 전체크기는 변함없음 OMG!!! */
+            text-align:center;
+            line-height: 200px;
+            background-color: rgba(0,0,0,0.8);
+            color:white;
+            transition:0.5s; /* 앞에 없을때는 all */
+        }
+        li:hover span{
+            left:0;
+            right:0;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <p>마우스를 올리면 설명이 오른쪽에서 왼쪽으로!</p>
+    <ul>
+        <li>
+            <img class="photo" src="../src/images/buildings.jpg" alt="">
+            <span>image title</span>
+        </li>
+        <li>
+            <img class="photo" src="../src/images/buildings.jpg" alt="">
+            <span>image title</span>
+        </li>
+    </ul>
+</body>
+</html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Position practice4</title>
+    <title>Transition2</title>
     <link rel="stylesheet" href="../css/logo.css">
     <style>
         *{
@@ -20,9 +20,15 @@
         li{
             line-height: 35px;
         }
-        ul>li>ul {            
+        .mainmenu ul {     /* 서브메뉴에 absolute를 걸면 부모및 다른 요소들이 얘를 눈치 못챔 */
             background-color: rgb(66, 66, 66);
-            display:none;
+            /* display:none; */
+            position:absolute;
+            opacity:0; /* display:none이랑은 좀 다름, 있는데 안보이는 거 -> 메뉴가 아니라 그 부분에 올려도 나타남  */
+            /* 해결방법
+            1. event 막기 -> 마우스 올렸을 때 나타나지만 서브메뉴를 누르려고 하면 다시 사라짐 */
+            transition: opacity 0.4s 0s ease-in-out;
+            pointer-events: none;
         }
         
         .mainmenu>li{
@@ -31,8 +37,9 @@
             float:left;
         }
         .mainmenu>li:hover>ul{
-            display:block;
-            position:absolute;
+            /* display:block; */
+            opacity:1;
+            pointer-events:auto;
         }
         .mainmenu:after{
             content:'';
@@ -62,5 +69,6 @@
         <li>Services</li>
         <li>Location</li>
     </ul>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, porro. Provident fugit hic rem, ducimus esse magni, nobis repudiandae molestiae dolorem excepturi culpa, nulla ut exercitationem? Qui nihil deserunt dignissimos! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus libero harum cum consectetur esse, asperiores magnam dolorem sed deserunt fugit expedita vel eos voluptas? Quam beatae quo dolores ullam vel?</p>
 </body>
 </html>

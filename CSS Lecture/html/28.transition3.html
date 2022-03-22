@@ -4,42 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Position practice4</title>
+    <title>Transition3</title>
     <link rel="stylesheet" href="../css/logo.css">
     <style>
         *{
             padding:0; /* ul 왼쪽에 자동으로 생기는 40px의 패딩을 없애줌 */
             margin:0;
         }
+        a:first-child{
+            display:block;
+            background-color: #fff; /* 백그라운드를 주어서 서브메뉴가 위로 올라간것을 안보이게! */
+        }
         .mainmenu{
             background-color: black;
-            color:white;
+            color:white; 
             padding-left:40px;
             width:600px; 
         }
         li{
             line-height: 35px;
         }
-        ul>li>ul {            
+        .mainmenu ul {     /* 서브메뉴에 absolute를 걸면 부모및 다른 요소들이 얘를 눈치 못챔 */
             background-color: rgb(66, 66, 66);
-            display:none;
+            /* display:none; */
+            position:absolute;
+            /* opacity:0;  */
+            top:-5em;
+            transition:top 0.4s;
+            z-index: -1;
         }
         
         .mainmenu>li{
             list-style: none;
-            margin-right:30px;
+            /* margin-right:30px; */
+            padding : 0 30px;
             float:left;
+            position:relative;
         }
         .mainmenu>li:hover>ul{
-            display:block;
-            position:absolute;
+            /* display:block; */
+            top:100%;
+            pointer-events:auto;
         }
         .mainmenu:after{
             content:'';
             display:block;
             clear:both;
         }
-        .mainmenu > li ul li {padding:0 10px;}
+        .mainmenu > li ul li {
+            list-style: none;
+            padding:0 10px;
+            white-space: nowrap;
+        }
+        p{
+            position:relative;
+            z-index: -2;
+        }
     </style>
 </head>
 <body>
@@ -62,5 +82,6 @@
         <li>Services</li>
         <li>Location</li>
     </ul>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, porro. Provident fugit hic rem, ducimus esse magni, nobis repudiandae molestiae dolorem excepturi culpa, nulla ut exercitationem? Qui nihil deserunt dignissimos! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus libero harum cum consectetur esse, asperiores magnam dolorem sed deserunt fugit expedita vel eos voluptas? Quam beatae quo dolores ullam vel?</p>
 </body>
 </html>

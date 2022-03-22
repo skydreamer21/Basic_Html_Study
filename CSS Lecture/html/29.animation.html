@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation - CSS</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        body{
+            font-size:12px;
+        }
+        .wrapper{
+            border:1px solid;
+            width:300px;
+            height:300px;
+            margin-bottom:10px;
+        }
+        .wrapper div {
+            width:100px;
+            height:100px;
+            background-color: red;
+        }
+        .photo{
+            /* animation-name:change_color; animation은 반드시 해당 name의 animation이 무슨일을 하는지 따로 적어주어야 함
+
+            animation-duration: 4s;
+            animation-delay: 0.1s; 반복시에는 적용 안됨
+            animation-iteration-count:2; 
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+
+            animation-direction: normal; 기본값
+            animation-direction: alternate-reverse; */
+            
+            /* 주의 duration -> delay -> iteration-count 순서 지키기 */
+
+        }
+        .wrapper:hover .photo {
+            animation:change_color 4s 0.1s 2 ease-in forwards reverse;
+        }
+        /* @keyframes change_color{ animation은 별도로 설정이 없으면 원래 상태로 돌아옴
+            from {background-color: red;}
+            to {background-color: blue;}
+        } */
+        /* @keyframes change_color{ 
+            0% {background-color: red;}
+            25% {background-color: green;}
+            50% {background-color: yellow;}
+            75% {background-color: green;}
+            100% {background-color: blue;}
+        } */
+        @keyframes change_color{ 
+            0% {}
+            25% {margin:0 0 0 200px;}
+            50% {margin:200px 0 0 200px;}
+            75% {margin:200px 0 0 0}
+            100% {}
+        }
+        .wrapper:hover .box{
+            animation:change_width 3s 0s 1 ease-in forwards;
+        }
+        @keyframes change_width{
+            from{width:100px;}
+            to{width:300px;}
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <p>마우스를 올려보세요</p>
+    <div class="wrapper">
+        <div class="photo">
+    
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="box">
+
+        </div>
+    </div>
+
+</body>
+</html>

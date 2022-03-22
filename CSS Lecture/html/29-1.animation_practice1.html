@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation practice1</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        img{
+            vertical-align: top;
+        }
+        .wrapper{
+            text-align: center;
+        }
+        .photo{
+            /* border:1px solid red; */
+            display:inline-block;
+            position:relative;
+            background: rgba(0,0,0,0);
+            
+        }
+        .photo img{
+            position:relative;
+            width:600px;
+            z-index: -1;
+        }
+        .text {
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform : translate(-50%,-50%);
+        }
+        .text p {
+            color:rgba(255,255,255,0); 
+        }
+        .photo:hover {
+            animation:change_opacity 0.5s 0s 1 ease-in forwards;
+        }
+        .photo:hover .text p{
+            animation:change_word_opacity 0.5s 0s 1 ease-in forwards;
+        }
+        @keyframes change_opacity{
+            from{background: rgba(0,0,0,0);}
+            to{background: rgba(0,0,0,0.8);}
+        }
+        @keyframes change_word_opacity{
+            from{color: rgba(255,255,255,0);}
+            to{color: rgba(255,255,255,0.8);}
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <div class="wrapper">
+        <div class="photo">
+            <img src="../src/images/buildings.jpg" alt="">
+            <div class="text">
+                <p>image title</p> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>

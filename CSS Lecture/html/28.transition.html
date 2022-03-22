@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition - CSS</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        .photo img{
+            width : 100px;
+            opacity:0;
+            /* transition-property:width;
+            transition-duration: 5s;
+            transition-delay:0s;
+            transition-timing-function:ease-in-out; */
+            transition : 
+            width 2s 0.2s ease-in-out,
+            margin-left 2s 1s cubic-bezier(.73,.12,.39,1.46); /* 앞이 duration 뒤가 delay */
+        }
+        .photo img{
+            transition:all 1s 0s cubic-bezier(.73,.12,.39,1.46); /* 모든 transition 속성이 같을때는 all로 한번에 씀 */
+            /* cubic-bezier.com */
+        } 
+        .photo:hover img{ /* 바뀌는 과정을 보고싶다! */
+            width:400px;
+            margin-left:100px;
+            opacity:1;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <p>아래에 마우스를 올려보세요</p>
+    <div class="photo"><img src="https://dummyimage.com/100" alt="tree"></div>
+</body>
+</html>
