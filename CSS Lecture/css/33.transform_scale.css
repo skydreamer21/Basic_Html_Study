@@ -1,0 +1,29 @@
+*{
+    padding:0;
+    margin:0;
+}
+div{
+    perspective: 1000px; 
+    perspective-origin: 50% 50%; 
+    
+    margin-bottom: 100px;
+}
+div img{
+    width:300px;
+    transition:all 0.35s;
+    transform-origin: 50% 50%; /* scale은 img한테 origin을 주어야함 (skew rotate 등도 마찬가지 일듯 */
+    transform:scale(0); /* 숫자 하나만 있으면 전체적인 비율 */
+}
+div:first-of-type:hover img {
+    transform:scale(1);
+}
+
+/* scaleZ => 앞쪽으로 움직이는 값이 있어야 거기에 몇배가 됨. -> perspective와 translateZ가 같이 있어야 적용된다. */
+div:nth-of-type(2) img {
+    /* transform:translateZ(100px);
+    transform:scaleZ(1); 이렇게 하면 위의 100px translate가 초기화 됨 */
+    transform:scaleZ(1) translateZ(100px); /* 한번에 같이 쓰기 */
+}
+div:nth-of-type(2):hover img {
+    transform:scaleZ(2) translateZ(100px);
+}

@@ -1,0 +1,39 @@
+*{
+    padding:0;
+    margin:0;
+}
+div{
+    perspective: 1000px; /* 원근감 설정 => 1000 내외 */
+    /* 기본 중심은 그림의 중심 */
+    perspective-origin: 50% 50%; 
+    /*원근감의 기준 : 가로 세로 */
+    /* perspective 1000 : 200 , 500 : 200 고려했을 때 500:200 이 더 많이 확대가 됨. */
+
+    margin-bottom: 100px;
+}
+/* transform이나 transition이나 구형 브라우저에서 잘 돌아가게 하려면 vendor prefix 붙여주어야 함 */
+div img{
+    /* -o-transition:all 0.35s; opera
+    -webkt-transition:all 0.35s; chrome, safari mobile
+    -moz-transition:all 0.35s; firefox
+    -ms-transition:all 0.35s; ie */
+    transition:all 0.35s;
+    /* margin-left:0; */ /* 그림 옆에 span태그도 같이 움직임 */
+}
+div:first-of-type:hover img {
+    /* margin-left:100px; */ 
+    /* transform 도 vendor prefix 붙여주어야 모든 브라우저에서 정상 작동 */
+    /* transform:translateX(100px); span은 가만히 있고 그림만 움직임 */
+    transform:translateZ(200px); /* 이것만 있으면 이 요소와 가상의 카메라 사이에 공간이 없기 때문에 먼저 그 거리부터 세팅을 해주어야 함 -> perspective : 이미지 자체에 할 수도 있고 부모에 할 수도 있음*/
+}
+div:nth-of-type(2):hover img{
+    transform:translate(100px, 50px);
+}
+div:nth-of-type(3):hover img{
+    transform:translate3d(100px, 50px, -300px);
+}
+
+
+.main{
+    width:300px;
+}

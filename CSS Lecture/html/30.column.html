@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Column - CSS</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hurricane&display=swap" rel="stylesheet">
+    <style>
+        body{
+            margin:0 auto;
+            font-family: 'Hurricane', cursive;
+            font-size: 25px;
+        }
+        .area{
+            width:600px;
+            margin:0 auto;
+            /* -o-column-count:2; opera
+            -moz-column-count:2; firefox
+            -webkit-column-count:2; safari, Chrome
+            -ms-column-count:2; -> 이전에 IE에서 column이 안먹힐때 쓰던 것 : -ms : vendor prefix
+            column-count:2; 다단 개수
+            우선순위를 고려한 순서 본 코드 위에 vendor prefix 넣기
+            column 은 나뉘어진 단의 양을 비슷하게 맞추어줌 */
+            column-rule:2px dotted red; /* 나눔선 */
+            /* column-count:2; */
+            /* column-width:200px; 이렇게도 다단 개수를 조절할 수 있음 */
+            columns:200px 4; 
+            /* width : minimum width
+               column : maximun column 
+               여기에 맞추어서 딱 맞게 만들어줌 
+            */
+        }
+        .area h1 { /* 제목은 column에 안들어가고 다 차지하기 */
+            column-span:all;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <div class="area">
+        <h1>multiple columns</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit autem, doloremque debitis sed aliquid itaque eligendi expedita praesentium facilis quidem voluptate ad, dolorum libero labore cum molestiae saepe eius laborum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit autem, doloremque debitis sed aliquid itaque eligendi expedita praesentium facilis quidem voluptate ad, dolorum libero labore cum molestiae saepe eius laborum?
+        Deserunt est fugiat labore adipisci non. Commodi asperiores corporis amet illum porro laborum, nesciunt debitis rem, repudiandae perspiciatis explicabo, harum unde reiciendis. Expedita hic similique eius quisquam odio itaque maiores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque sapiente maiores, minima voluptate, sunt culpa ut rerum dicta eaque sequi id iusto. Officiis ex aut cum totam molestiae eaque amet. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus similique cum amet sint. Consectetur, est totam repellendus culpa explicabo officiis? Ratione quaerat nisi repellat! Id architecto error vel iusto et!</p>
+    </div>
+</body>
+</html>

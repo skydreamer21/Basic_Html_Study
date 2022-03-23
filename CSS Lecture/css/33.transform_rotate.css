@@ -1,0 +1,41 @@
+*{
+    padding:0;
+    margin:0;
+}
+div {
+    width:500px;
+    margin:0 auto;
+    margin-bottom: 50px;
+}
+div img {
+    width:300px;
+    transition:all 0.35s;
+}
+div:first-of-type img{
+    transform-origin: right top;
+    /* perspective-origin: 100% 100%; */
+    transform: perspective(1000px) rotate(0deg);
+}
+
+div:first-of-type:hover img{
+    transform: perspective(1000px) rotate(360deg);
+}
+
+div:nth-of-type(2) img{
+    transform-origin: 50% 50%;
+    transform: perspective(500px) rotateX(0deg);
+    /* img에게 직접 perspective 를 주는 방법 */
+    /* perspective 가 없으면 공간감이 없어서 rotateX가 단순히 늘어나거나 뒤집히거나 이렇게 보일 수 있음 */
+}
+div:nth-of-type(2):hover img{
+    transform: perspective(500px) rotateX(-60deg);
+}
+
+div:nth-of-type(3) img{
+    transform: perspective(1000px) rotate(0deg);
+    /* perspective 가 없으면 공간감이 없어서 rotateX가 단순히 늘어나거나 뒤집히거나 이렇게 보일 수 있음 */
+}
+div:nth-of-type(3):hover img{
+    transform: perspective(1000px) rotate(45deg);
+    transform-origin: left center;
+}

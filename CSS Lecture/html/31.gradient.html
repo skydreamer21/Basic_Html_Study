@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient</title>
+    <link rel="stylesheet" href="../css/logo.css">
+    <style>
+        div{
+            width:300px;
+            height:300px;
+            border:1px solid;
+        }
+        .linear {     
+            /* background:linear-gradient(방향, 색상 위치, 색상 위치,.....); */
+            /* background:linear-gradient(to bottom, #000 0%, #fff 100%); */
+            background:linear-gradient(#000, #fff 20%, #000); /* 방향 기본값 : 위->아래 (to bottom은 지정할 필요 없음), 시작과 끝이 0, 100 이면 퍼센트 안적어도 된다. */
+            /* 맨앞은 안적으면 자동 0% 맨뒤도 안적으면 자동 100% */
+        }
+        .prac {
+            background:linear-gradient(30deg, #00f 0%, #fff 48%, #a17c4c 52%, #fff 100%);
+            /* 브라우저마다 각도 구현 방식이 달라서 까다로움 */
+        }
+        .prac2{
+            background:linear-gradient(to right, #2989cc 20%, #fff 20%, #fff 80%, #2989cc 80%);
+        }
+        .prac3{ /* coloarzilla를 이용하면 모든 브라우저에서 똑같이 나오게끔 만들 수 있음 */
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+0,2989d8+50,207cca+51,7db9e8+100;Blue+Gloss+Default */
+            background: #25bc2f; /* Old browsers */
+            background: -moz-linear-gradient(top,  #25bc2f 0%, #878771 53%, #fff6f4 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top,  #25bc2f 0%,#878771 53%,#fff6f4 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom,  #25bc2f 0%,#878771 53%,#fff6f4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ => 표준 코드 (표준을 맨뒤에~!)*/
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#25bc2f', endColorstr='#fff6f4',GradientType=0 ); /* IE6-9 => 아예 gradient가 없어서 복잡하게 해야함 */                    
+        }
+        .prac4{
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1e5799+0,2989d8+50,207cca+51,7db9e8+100;Blue+Gloss+Default */
+            background: #1e5799; /* Old browsers */
+            background: -moz-linear-gradient(-45deg,  #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(-45deg,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(135deg,  #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+        }
+        .Radial {
+            background:radial-gradient(ellipse at center, #000, #fff);
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html"><img class="logo" src="../src/images/css_logo.png" alt="logo"></a>
+    <h1>Gradient</h1>
+    <h2>Linear gradient</h2>
+    <div class="linear">Linear</div>
+    <div class="prac">prac</div>
+    <div class="prac2">prac2</div>
+    <div class="prac3">prac3</div>
+    <div class="prac4">prac4</div>
+
+
+    <h2>Radial gradient</h2>
+    <div class="Radial">Radial</div>
+</body>
+</html>
