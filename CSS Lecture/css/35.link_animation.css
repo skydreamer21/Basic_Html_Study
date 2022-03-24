@@ -1,0 +1,135 @@
+*{
+    padding:0;
+    margin:0;
+}
+body{
+    font-family: 'Karla', sans-serif;
+    /* 폰트에 따라 기본 line-height가 있음. 이건 어떻게 해도 바꿀수 없는 값. 좁다면 padding을 주어서 늘릴 수 있지만 넓다면 좁힐 수 없음.. 폰트 선택할 때 잘 보고 선택 */
+    /* font-size:1.125rem; */
+    line-height:1.5625em; /* 25px */
+}
+h2{
+    margin-bottom: 1em;
+}
+.wrapper {
+    max-width:50rem;
+    width:100%;
+    margin:2rem auto;
+    padding:0 2em;
+    box-sizing: border-box;
+    /* text-align:justify; */
+    /* word-break:break-all; 이렇게 해도 inline-block으로 처리된 요소는 분리되지 않음 -> 대신 그부분 river를 유발할 수 있음 */
+}
+/* 기본적으로 anchor태그의 밑줄이나 글자 밑줄사이 간격 못 정함 -> border
+border로 한다면 밑줄 속성과 padding으로 간격도 바꿀 수 있음 */
+a{
+    box-sizing: content-box;
+    color:#2f8fcf;
+}
+a.fade_in_bg {
+    text-decoration: none;
+    border-bottom:0.0625em dotted #3498db;
+    transition:0.35s;
+    padding : 0.03em 0.25em 0.05em ;
+}
+a.fade_in_bg:hover {
+    background:#3498db;
+    color:white;
+}
+a[class^="slide"] {
+    text-decoration:none;
+    line-height:1.5em;
+    padding:0 0.25em /* 0.25em */;
+    border-bottom:0.0625em dotted #3498db;
+    position:relative;
+    overflow: hidden; /* 그냥 이것만 하면 a요소가 inline요소기 때문에 크기 없어서 뭐가 넘치는지 감이 없음 ->inline-block */
+    display:inline-block; /* 이렇게 되면 크기를 가지게 되면서 앞 뒤 요소와 높이가 맞지 않음.->vertical-align */
+    /* 추가로 inline-block을 하게 되면 줄바뀔때의 before요소들이 안보였던게 보이게 됨. 크기를 갖지 않으므로 바로 전의 줄 맨 끝으로 갔을 때 오른쪽에 더이상 공간이 없으므로 보이지 않게 됨. 근데 크기를 가지면 어디 있든 항상 보임 */
+    vertical-align: bottom;
+}
+/* 이제 마우스를 올리면 옆에있던 파란 바탕의 흰 글씨가 들어와야 되는데 글씨를 어떻게 만들지? => css before/after content */
+/* a.slide_from_left:hover:after {
+    position:absolute;
+    content:'tempora delectus';
+    color:white;
+    background-color: #3498db;
+    white-space: nowrap;
+    animation : slide_from_left 0.35s forwards;
+    padding:0 0.25em;
+    overflow: hidden;
+}
+@keyframes slide_from_left {
+    0% {right:100%}
+    100% {right:0}
+} */
+
+a[class^="slide"]::before {
+    position:absolute;
+    /* content:'tempora delectus'; */
+    content:attr(data-linktext);
+    /* html에서 data-~ 를 content로 지정해놓으면 그 값을 불러와서 사용가능 -> css 간략히 만들 수 있다 */
+    padding:0 0.25em;
+    background-color: #3498db;
+    white-space: nowrap;
+    color:white;
+    transition:0.35s;
+}
+a[class^="slide"]:hover::before {
+    left:0; right:0; top:0; bottom:0;
+}
+.slide_from_left::before {
+    right:100%; left:-100%; /* 하나만 써주면 이 요소의 온전한 너비가 잡히지 않음 */
+    top:0; bottom:0;
+}
+.slide_from_right::before {
+    right:-100%; left:100%; 
+    top:0; bottom:0;
+}
+.slide_from_top::before {
+    top:-100%; bottom:100%;    
+    left:0; right:0; /* 마우스를 올리기 전에도 너비가 온전히 잡히지 않으므로 */
+}
+.slide_from_bottom::before {
+    top:100%; bottom:-100%; left:0; right:0;
+}
+
+a.fade_in_underline{
+    text-decoration: none;
+    padding:0 0.125em 0.05em;
+    border-bottom:0.125em solid #fff; /* 배경이 하얀색이기 때문에 처음에는 안보임 */
+    /* border-bottom:0.125em solid transparent; */
+    transition:all 0.35s;
+}
+/* 마우스 올렸을 때 선이 나오게 하고 싶다면 원래부터 선을 넣어주기. -> 그래야 선이 나왔을 때 틀어지지 않음 */
+/* 만약 배경이 하얀색이 아니라면 #fff 대신에 transparent로 넣어주기 (참고로 transparent도 색임. 투명색, 따라서 색 바꾸는게 적용이 됨 */
+.fade_in_underline:hover{
+    border-color:#3498db;
+}
+
+a[class^="underline"] {
+    text-decoration: none;
+    padding:0 0.125em 0.05em;
+    position:relative;
+    display:inline-block;
+    line-height: 1em;
+}
+a[class^="underline"]::before {
+    content:'';
+    position:absolute;
+    top:100%;
+    border-bottom:0.125em solid #3498db;
+    transition : 0.35s;
+}
+
+.underline_from_left::before {
+    left:0; right:100%;
+}
+.underline_from_right::before {
+    left:100%; right:0;
+}
+.underline_from_center::before {
+    left:50%; right:50%;
+}
+a[class^="underline"]:hover::before {
+    left:0; right:0;
+}
