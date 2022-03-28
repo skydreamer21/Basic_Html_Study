@@ -1,0 +1,136 @@
+*{
+    margin:0;
+    padding:0;
+}
+[class^="wrap"]{
+    display:flex;
+    margin:50px auto;
+}
+
+[class^="wrap"] div {
+    width:33.3%;
+}
+
+div[class^="wrap"] div:first-child {
+    background-color: rgb(255, 100, 100);
+}
+div[class^="wrap"] div:nth-child(2) {
+    background-color: rgb(100, 100, 255);
+}
+div[class^="wrap"] div:nth-child(3) {
+    background-color: rgb(255, 255, 100);
+}
+
+.wrap {
+    height:200px;
+    /* flex-direction: row; 기본값 : 가로방향(row) */
+    flex-direction: row-reverse; /* css 에서 html을 건드리지 않고 순서를 바꿀수가 있음! */
+}
+.wrap2 {
+    /* flex-direction: column; */
+    flex-direction: column-reverse;
+}
+.wrap3 {
+    height:200px;
+    flex-direction: row;
+    /* flex-wrap:nowrap; 기본값 */
+    /* flex-wrap:wrap; 넘치면 아래로 쌓아 */
+    flex-wrap : wrap-reverse; /* 넘치면 아래로 쌓되 거꾸로 쌓아 */
+    flex-flow: row wrap; /* direction과 wrap을 합쳐서 쓰는 방법 */
+}
+
+/* 같은 .wrap이라도 div.wrap이라고 쓰는 것이 css 우선순위가 더 높음 */
+div.wrap3 div { 
+    width:100%;/* nowrap이라는 것은 아래로 쌓지 말라 -> 너비가 100%여도 한 줄에서 width가 나뉘어짐 */
+} 
+.wrap3 div:nth-child(n+2) {
+    width:50%;
+}
+
+.wrap4 {
+    /* justify-content: flex-start; 앞쪽부터 채워! */
+    /* justify-content: flex-end; 뒤부터 채워 */
+    justify-content: center; /* float을 하려면 box들을 감싸는 모델이 하나 더 있어야 함 */
+    justify-content: space-between; 
+    justify-content: space-around;
+    justify-content: space-evenly;
+
+    width:90%;
+    height:200px;
+    border:2px solid;
+}
+.wrap4 div {
+    width:150px;
+}
+
+/* align-items : 주축이 아닌 교차축에서 어디에 놓을 것인가 */
+.wrap5 {
+    justify-content: center;
+    align-items: stretch;/* 기본값 -> 안의 요소에 height를 안주어도 자동으로 부모 크기에 맞게 늘려줌*/
+    align-items: flex-start;
+    align-items: flex-end;
+    align-items: center;
+    width:90%;
+    height:200px;
+    border:2px solid;
+}
+.wrap5 div {
+    width:33.3%;
+    height:150px;
+}
+.wrap5 div:nth-child(2) {
+    align-self:flex-start; /* 얘만 따로 정렬.. wow */
+}
+
+.wrap6 {
+    flex-wrap:wrap;
+    align-content:flex-start;
+    align-content:flex-end;
+    align-content:center;
+    align-content:space-between;
+    align-content:space-around;
+    align-content:space-;
+    width:90%;
+    height:500px;
+    border:2px solid;
+}
+.wrap6 div {
+    width:100%;
+    height:100px;
+}
+
+/* css를 통해서 얼마든지 순서를 바꿀 수 있음 */
+.wrap7 {
+    width:90%;
+    height:200px;
+    border:2px solid;
+}
+.wrap7 div:nth-child(1) {
+    order:2;
+}
+.wrap7 div:nth-child(2) {
+    order:3;
+}
+.wrap7 div:nth-child(3) {
+    order:1;
+}
+
+/* 기본 너비가 없을 때도 지정 가능 */
+/* flex-grow와 -shrink가 같으면 생략 가능 */
+.wrap8 {
+    width:90%;
+    height:200px;
+    border:2px solid;
+}
+.wrap8 div:nth-child(1) {
+    /* flex:1 1 0; */
+    flex:1;
+}
+.wrap8 div:nth-child(2) {
+    /* flex:1 1 0; */
+    flex:3;
+}
+.wrap8 div:nth-child(3) {
+    /* flex:2 2 0; */
+    flex:2;
+}

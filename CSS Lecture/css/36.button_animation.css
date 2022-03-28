@@ -32,8 +32,20 @@ button {
     padding: 0.85em 0.75em;
     margin : 1rem;
     position:relative;
-    z-index: 1; 
+    z-index: 0; 
+    /* z-index를 준다는 것이 중요한것? => stacking context를 만듬 */ 
     /* 컨텐츠가 살짝 뜨면서 background랑 분리가 됨 */
+
+    /* 
+    ***정리***
+    1. position 에서 z-index를 준다는 것은 새로운 stacking context를 만드는 것
+    2. stacking context를 만든다는 것은 그 stacking context가 같이 움직인다는 것임
+    3. stacking context를 만들경우 맨처음 해당 stacking context를 만드는 요소의 background와 border를 먼저 깜.
+    4. 그 다음 자식 요소중 z-index가 음수인 요소가 온다.
+    (https://ageek.dev/css-z-index)
+    위의 이유때문에 부모에 z-index 값을 주게 되면 부모background - z-index음수 자식 - content 순으로 쌓이게 됨
+    
+    */
     overflow: hidden;
 }
 
@@ -46,8 +58,9 @@ button:before {
     background-color: #ecf0f1;
     position:absolute;
     padding:0.85em 0.75em;
-    z-index: -2; 
+    z-index: -1; 
     /* button과 background사이에 before가 들어올 수 있음     */
+    /* before는 button의 자식요소로 z값을 음수로 한다는 것은 부모보다 아래로 가란 뜻임, 근데 부모의 z값이 0이면 그 아래가 백그라운드라 안보이는데 부모의 z값이 양수이면 content가 z값만큼 뜨고 background는 가만히 있어서 background와 content사이에 before가 들어감. 어차피 부모의 자식요소라 실제로 -1이 될 수는 없음 */
 }
 button[class^="slide"]:before{
     transition:0.35s;
@@ -67,5 +80,48 @@ button[class^="slide"]:hover:before {
 }
 .slide_from_bottom:before {
     left:0; right:0; top:100%; bottom:-100%;
+}
+.grow_box:before{
+    left:0; right:0; bottom:0; top:0;
+    transform:scale(0);
+    transition:0.35s;
+}
+.grow_box:hover:before{
+    transform:scale(1);
+}
+.grow_ellipse:before{
+    left:-30%; right:-30%; bottom:-30%; top:-30%;
+    border-radius: 50%;
+    /* border :2px solid black; */
+    transform:scale(0);
+    transition:0.35s;
+}
+.grow_ellipse:hover:before {
+    transform:scale(1);
+}
+.grow_skew_forward:before {
+    left:-20%; right:-20%; bottom:0; top:0;
+    transform:skew(-45deg) scaleX(0);
+    transition:0.35s;
+}
+.grow_skew_forward:hover:before {
+    transform:skew(-45deg) scaleX(1); /* scale만 바꾼다고 scale만 쓰만 skew는 무시됨. */
+}
+.grow_skew_backward:before {
+    left:-20%; right:-20%; bottom:0; top:0;
+    transform:skew(45deg) scaleX(0);
+    transition:0.35s;
+}
+.grow_skew_backward:hover:before {
+    transform:skew(45deg) scaleX(1); /* scale만 바꾼다고 scale만 쓰만 skew는 무시됨. */
+}
+
+.grow_spin:before {
+    left:0; right:0; bottom:0%; top:0%;
+    transform: scale(0) rotate(-180deg);
+    transition:0.35s;
+}
+.grow_spin:hover:before {
+    transform: scale(1) rotate(0deg);
 }
 

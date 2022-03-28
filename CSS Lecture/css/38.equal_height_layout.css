@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ecf0f1;
+}
+.wrapper {
+    max-width: 60rem;
+    width: 100%;
+    margin: 2rem auto;
+    border:2px solid;
+}
+
+.gradientbg::before, .gradientbg::after {
+    content:'';
+    display:table; /* 블록이랑 비슷 */
+}
+.gradientbg::after {
+    clear:both;
+}
+.gradientbg .sidebar {
+    width:20%;
+    padding:1.618rem;
+    color:#fff;
+    bottom:0%;
+}
+.gradientbg main {
+    width:60%;
+    padding:1.618rem;
+    /* 내용에 따라 높이가 달라지니까 안쪽에 여백을 줄 때 height 로 하는것이 아니라 padding을 통해 여백을 줌 */
+    float:left;
+    margin-left: 20%; /* sidebar left가 들어갈 공간 */
+    /* background:#fff; */
+}
+.gradientbg .left {
+    float:left;
+    margin-left:-80%;
+    /* background-color: #3498db; */
+}
+.gradientbg .right {
+    float:right;
+    /* background-color: #34495e; */
+}
+.gradientbg { /* 꼼수 배경에 gradient를 주기 */
+    background:linear-gradient(to right, #3498db 20%, #fff 20%, #fff 80%,#34495e 80%);
+}
+
+.flexbg {
+    display:flex;
+    /* 자동으로 가로배열 + 높이도 똑같음 -> 꼼수(gradient)를 쓸 필요가 없음 */
+}
+.flexbg main {
+    background:#fff;
+    width:60%;
+    padding:1.618rem;
+    /* flex-shrink: 1; */
+    order:2;
+}
+.flexbg .sidebar {
+    padding:1.618rem;
+    color:#fff;
+    /* width:20%; */
+}
+.flexbg .left {
+    background-color: #3498db;
+    order:1;
+}
+.flexbg .right {
+    background-color: #34495e;
+    order :3;
+}
+
+
+
+
+
+/* 반응형은 항상 뒤에 쓰기(우선순위) */
+@media screen and (max-width:768px) {
+    /* 768까지의 스타일 (768이하) */
+    .gradientbg main{ width:100%; float:none; margin-left: 0; background:#fff;}
+    .gradientbg .sidebar {width:50%;}
+    .gradientbg .left {margin-left:0;}
+    .gradientbg {background : linear-gradient(to right, #3498db 50%,#34495e 50%);}
+    
+    .flexbg {flex-wrap: wrap;}
+    .flexbg main {width:100%; order:1;}
+    .flexbg .sidebar{width:50%;}
+    .flexbg .left{order:2;}
+    .flexbg .right{order:3;}
+
+
+}
+@media screen and (max-width:510px) {
+    /* 480px 이하 */
+    .gradientbg .sidebar {
+        width: 100%;
+    }
+    .gradientbg {background:none;}
+    .gradientbg .left, .gradientbg .right {float:none;}
+    .gradientbg .left {background-color: #3498db;}
+    .gradientbg .right {background-color: #34495e;}
+
+    .flexbg .sidebar{width:100%;} /* float보다 훨씬 간단... */
+}
+
