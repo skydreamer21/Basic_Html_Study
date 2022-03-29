@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    line-height: 1.618em;
+    color: #555;
+    /* color:#000; */
+    background: #2c3e50;
+}
+.wrapper {
+    max-width: 50rem;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 5rem;
+    background: #fff;
+    border: 0.5rem solid #34495e;
+}
+a {
+    text-decoration: none;
+    color:#3498db;
+}
+[class^="fa"] {
+    font-size: 4rem;
+    margin: 1rem;
+}
+.fa-twitter {
+    color:#00b0ed;
+}
+.fa-facebook{
+    color:#3b5998;
+}
+.footnotes {
+    margin: 60rem auto;
+}
+.tooltip{
+    position:relative;
+    display:inline-block; /* a태그는 inline 요소라서 크기를 제대로 잡지 못함 */
+}
+.tip {
+    /* display:none; */
+    position:absolute;
+    left:100%; top:50%;
+    transform:translateY(-50%);
+    padding:1em; 
+    font-size: 0.8em; 
+    color:#fff; 
+    background:#34495e;
+    border-radius: 1em; 
+    white-space: nowrap;
+}
+/* #footnotes:target{
+    background: #ecf0f1;
+} */

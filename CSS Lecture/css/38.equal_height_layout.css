@@ -46,20 +46,28 @@ body {
     background:linear-gradient(to right, #3498db 20%, #fff 20%, #fff 80%,#34495e 80%);
 }
 
+
+
+
+
 .flexbg {
     display:flex;
     /* 자동으로 가로배열 + 높이도 똑같음 -> 꼼수(gradient)를 쓸 필요가 없음 */
 }
+.wrapper{
+    max-width: none;
+}
 .flexbg main {
     background:#fff;
-    width:60%;
+    /* width:60%; */
     padding:1.618rem;
-    /* flex-shrink: 1; */
+    /* flex-shrink: 0; */
     order:2;
 }
 .flexbg .sidebar {
     padding:1.618rem;
     color:#fff;
+    /* flex-shrink: 0; */
     /* width:20%; */
 }
 .flexbg .left {

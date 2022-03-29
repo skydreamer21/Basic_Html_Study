@@ -49,8 +49,9 @@ body>a:first-of-type{display:block; margin-bottom: 50px;}
 }
 /* 마우스를 올렸을 때 .fa가 늘어나는 것이면 아이콘이 가운데 정렬이 되어야함 -> .fa 가 늘어나는 것이 아니라 가상의 요소가 늘어나는 것 */
 .menu_item span {
-    margin-left:4em; display:block;
+    display:block;
     white-space: nowrap;
+    margin-left:4em;
     /* position:relative;  */
 }
  .menu_item a::before {
@@ -76,10 +77,12 @@ body>a:first-of-type{display:block; margin-bottom: 50px;}
  @media screen and (max-width:55rem) {
     .menu_item span {
         margin-left:1em;
+        /* max-width:0; */
         width:0;
         transition:0.5s ease;
     }
     .menu_item a:hover span {
+        /* max-width:300px; */
         width:auto;
         margin-left:4.5em;
 
