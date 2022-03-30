@@ -1,0 +1,20 @@
+*{margin: 0; padding: 0;}
+body,h1,h2,h3,h4{font-family: verdana,sans-serif; font-size: 12px;}
+li{list-style: none;}
+
+.photo{
+	width: 240px;
+	height: 200px;
+	background-image: url(../src/images/photo-240.png);
+	background-repeat: no-repeat;
+	background-position: 0 0;
+    background-size: 100%;
+	text-indent: -9999em;
+}
+
+/* 이때 -webkit은 이전에 쓰던 vendor prefix가 아님 => 모바일에서 볼 때 모바일 브라우저에서 html, css를 해석해서 화면에 렌더링 해주는 엔진 이름 */
+@media screen and (-webkit-min-device-pixel-ratio:2) {
+    .photo {
+        background-image: url(../src/images/photo-480.png);
+    }
+}

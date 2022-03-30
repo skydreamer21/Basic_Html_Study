@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box; /* border까지 box로 처리 */
+}
+.wrapper div  {
+    float:left;
+    margin:5px;
+} 
+.testbox0 {
+    border-style: solid;
+    border-width: 0.7em;
+    border-color: #3498db transparent transparent transparent;
+    /* border-color: blue red yellow cyan; */
+    width:0em; height: 0em;
+}
+.testbox1 {
+    border-style: solid;
+    border-width: 0.7em;
+    border-color: #3498db #ccc #ccc #ccc;
+    width:0em; height:0em;
+}
+.testbox2 {
+    border-style: solid;
+    border-width: 0.7em 0.7em 0.7em 0.7em;
+    border-color: #3498db #ccc #ccc #ccc;
+    width: 1.4em;  height: 1.4em; /* 이게 딱맞는 크기 */
+}
+.testbox3 {
+    border-style: solid;
+    border-width: 0.7em 0.7em 0.7em 0.7em;
+    border-color: #3498db #ccc #ccc #ccc;
+    width: 3em;  height: 3em;
+}
+.testbox4 {
+    border-style: solid;
+    border-width: 0.7em;
+    border-color: #3498db #3498db transparent transparent;
+    width:0em; height: 0em;
+}

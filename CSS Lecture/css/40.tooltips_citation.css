@@ -35,6 +35,7 @@ a {
 .tooltip{
     position:relative;
     display:inline-block; /* a태그는 inline 요소라서 크기를 제대로 잡지 못함 */
+    /* border:1px solid; */
 }
 .tip {
     /* display:none; */
@@ -47,7 +48,39 @@ a {
     background:#34495e;
     border-radius: 1em; 
     white-space: nowrap;
+    opacity:0;
+    margin-left:-5%;
+    transition : 0.35s;
+}
+.tooltip:hover .tip {
+    opacity:1;
+    margin-left:0;
 }
 /* #footnotes:target{
     background: #ecf0f1;
 } */
+
+.tip::after {
+    content:'';
+    position:absolute;
+    right:100%;
+    top:50%;
+    transform:translateY(-50%);
+    /* width:0rem;
+    height:0rem; */
+    border-style: solid;
+    border-color: transparent #34495e transparent transparent;
+    border-width:0.5em;
+}
+#footnote:target {
+    background: black;
+    color:red;
+}
+#footnote2:target {
+    animation : border-effect 2s;
+}
+@keyframes border-effect {
+    0% {background: #fff;}
+    50% {background: rgb(255, 159, 81);}
+    100% {background: #fff;}
+}

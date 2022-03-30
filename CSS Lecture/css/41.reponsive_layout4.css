@@ -1,0 +1,12 @@
+*{margin: 0; padding: 0;}
+body,h1,h2,h3,h4{font-family: verdana,sans-serif; font-size: 12px;}
+#header{background-color: red; line-height: 40px;}
+#wrap{width: 960px; margin: 0 auto;}
+#wrap{max-width:960px; width:90%;}
+/* media query 안 쓰고 max-width로 해도됨 */
+#content{background-color: lime;}
+#footer{margin-top: 30px; background-color: silver; line-height: 30px;}
+
+/* @media (max-width:960px) {
+    #wrap {width:100%;}
+} */
